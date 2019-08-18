@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+{% include head.html %}
+
+<body>
+	<div class="wrapper writeup">
+			<div class="container">
+				<nav class="site-nav">
+					<a href="../">&larr; Week {{ page.week }} Overview</a>
+				</nav>
+				<article class="site-content">
+					<h1>{{ page.type | capitalize}} for Module {{ page.week }}:</h1>
+
+					{% for ext in site.extensions limit:100 %}
+						{% assign sweek = ext.week | downcase %}
+						{% assign pweek = page.week | downcase %}
+						{% if sweek == pweek %}
+							<h2 id={{ext.number}}>Extension {{ext.week}}.{{ext.number}}: {{ext.name}} ({{ext.points}} points)</h2>
+							{{ ext.content }}
+							<h1>Submitting your work</h1>
+
+							<p>To submit your work, contact the instructor or a TA. They will walk you through the submission process. Be prepared to show them the work that you have done and answer their questions about it!</p>
+						{% endif %}
+					{% endfor %}
+				</article>
+			</div>
+
+			{% include footer.html %}
+	</div>
+	<script type="text/javascript" src="{{ "/js/highlight.pack.js" | prepend: site.baseurl }}"></script>
+</body>
+</html>

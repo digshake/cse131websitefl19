@@ -1,0 +1,39 @@
+---
+layout: default
+title: Extensions
+permalink: ext/
+author: Doug Shook
+---
+
+{% include nav.html %}
+
+<section class="site-content site-content--full">
+	
+	<table class="calendar">
+		<thead class="calendar__head">
+			<tr>
+				<th class="calendar__colhead">Extension</th>
+				<th class="calendar__colhead">Name</th>
+				<th class="calendar__colhead">Points</th>
+			</tr>
+		</thead>
+		<tfoot class="calendar__foot">
+			<tr>
+				<th class="calendar__colfoot">Extension</th>
+				<th class="calendar__colfoot">Name</th>
+				<th class="calendar__colfoot">Points</th>
+			</tr>
+		</tfoot>
+		<tbody>
+			{% for ext in site.extensions limit:100 %}
+				{% if ext.week <= site.weekdisplay %}
+					<tr class="calendar__row">
+						<td>{{ ext.week }}.{{ext.number}}</td>
+						<td><a href="../weeks/{{ext.week}}/ext#{{ext.number}}">{{ext.name}}</a></td>
+						<td>{{ext.points}}</td>
+					</tr>
+				{% endif %}
+			{% endfor %}
+		</tbody>
+	</table>
+</section>

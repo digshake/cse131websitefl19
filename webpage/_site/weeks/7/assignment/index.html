@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Students and Courses | CSE131: Computer Science I</title>
+  <meta name="description" content="  Creating Student and Course classCreating Student and Course class##SynopsisThis problem set will give you some practice with encapsulation in Java, as wel...">
+
+  <link rel="stylesheet" href="/cse131/_site/css/main.css">
+  <link rel="canonical" href="https://www.cse.wustl.edu/cse131/_site/weeks/7/assignment/">
+  <link rel="alternate" type="application/rss+xml" title="CSE131: Computer Science I" href="https://www.cse.wustl.edu/cse131/_site/feed.xml">
+</head>
+
+
+<body>
+	<div class="wrapper">
+			<div class="container">
+
+				<article class="site-content">
+					<h1>Assignment 7: Students and Courses</h1>
+
+
+
+					<ul id="markdown-toc">
+  <li><a href="#creating-student-and-course-class" id="markdown-toc-creating-student-and-course-class">Creating <code class="highlighter-rouge">Student</code> and <code class="highlighter-rouge">Course</code> class</a></li>
+</ul>
+
+<h1 id="creating-student-and-course-class">Creating <code class="highlighter-rouge">Student</code> and <code class="highlighter-rouge">Course</code> class</h1>
+
+<p>##Synopsis</p>
+
+<p>This problem set will give you some practice with encapsulation in Java, as well as some practice using git.</p>
+
+<p>##Using Encapsulation</p>
+
+<p>Your task is to generate two classes: Student and Course</p>
+
+<p>First, take a look at the StudentAndCourseTest.java file. In that file you will see unit tests. Unfortunately, none of the tests will currently pass. You can use these tests as you develop your classes to verify whether they are working as intended. You are also encouraged to write some additional tests of your own. Be sure to test often!</p>
+
+<p>Next, start crafting a Student class. Students have lots of wonderful properties, but we are primarily interested in these:</p>
+
+<ul>
+  <li>Name (first and last)</li>
+  <li>Student ID</li>
+  <li>Credits</li>
+  <li>GPA</li>
+</ul>
+
+<p>Add these properties to your class, create a constructor, create some getters and setters, and test!</p>
+
+<p>Now we want to add some functionality to our Student class. Add the following methods:</p>
+
+<p><strong><code class="highlighter-rouge">submitGrade()</code></strong> - this method takes in a course grade (as a value between 0 and 4) and the number of credits for a course, and updates the students GPA accordingly. GPA can be computed by the following formula:</p>
+
+<p>Take the number of credits for a course and multiply it by the grade for that course. This is called the quality score. GPA is computed as the sum of all of the quality scores for each course the student has taken, divided by the total number of credits.</p>
+
+<p>You should also round the GPA so that it only contains three digits after the decimal.</p>
+
+<p><strong><code class="highlighter-rouge">getClassStanding()</code></strong> - returns the students class standing based on how many credits they have:</p>
+
+<ul>
+  <li>Fewer than 30: Freshman</li>
+  <li>More than or equal to 30 but less than 60: Sophomore</li>
+  <li>More than or equal to 60 but less than 90: Junior</li>
+  <li>More than or equal to 90: Senior</li>
+</ul>
+
+<p><strong><code class="highlighter-rouge">createLegacy()</code></strong> - it is not unusual for two students to meet at college, get married, start a family, and send their children to the same school. This method should take a Student object as a parameter then create and return a new Student object based on the following criteria:</p>
+
+<ul>
+  <li>Use one parent's full name as the baby's first name, the other parent's full name as the baby's last name</li>
+  <li>Assign the baby a student ID that is the sum of its parents IDs.</li>
+  <li>The legacy's estimated GPA will be the average of its parents GPA.</li>
+  <li>The legacy's estimated number of credits will be the maximum of its parents credits</li>
+</ul>
+
+<p>Hint: it may be useful to create an additional constructor!</p>
+
+<p><strong><code class="highlighter-rouge">toString()</code></strong> - returns the students full name and student ID</p>
+
+<p>Before moving on, make sure that the tests pass!</p>
+
+<p>###Creating a Course class</p>
+
+<p>The Course class should contain the following properties:</p>
+
+<ul>
+  <li>Name</li>
+  <li>Credits</li>
+  <li>Number of seats</li>
+  <li>Roster of Students</li>
+</ul>
+
+<p>Add these properties to your class, create a constructor, create some getters and setters, and test!</p>
+
+<p>Next, implement the following functionality:</p>
+
+<p><strong><code class="highlighter-rouge">addStudent()</code></strong> - returns a boolean based on whether or not the student was successfully added to the course. Check to make sure that the student has not already enrolled, and update the number of seats remaining.</p>
+
+<p><strong><code class="highlighter-rouge">generateRoster()</code></strong> - Returns a String that represents a roster with all of the students in the course. Make sure to omit “empty” seats!</p>
+
+<p><strong><code class="highlighter-rouge">averageGPA()</code></strong> - returns the average GPA of all students enrolled in the course. Make sure to omit “empty” seats!</p>
+
+<p><strong><code class="highlighter-rouge">toString()</code></strong> - should contain the course number and credits</p>
+
+<p>##Submission</p>
+
+<p>Once you have completed both classes and they pass the given unit tests, show your work to a TA.</p>
+
+				</article>
+			</div>
+
+	</div>
+	<script type="text/javascript" src="/cse131/_site/js/highlight.pack.js"></script>
+</body>
+</html>

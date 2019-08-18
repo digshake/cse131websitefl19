@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Linked List Manipulation | CSE131: Computer Science I</title>
+  <meta name="description" content="##LabIMPORTANT: Do not modify the provided toString method in the ListItem class, since our automated tests depend on the specific formatting it produces.##P...">
+
+  <link rel="stylesheet" href="/cse131/_site/css/main.css">
+  <link rel="canonical" href="https://www.cse.wustl.edu/cse131/_site/weeks/9/assignment/">
+  <link rel="alternate" type="application/rss+xml" title="CSE131: Computer Science I" href="https://www.cse.wustl.edu/cse131/_site/feed.xml">
+</head>
+
+
+<body>
+	<div class="wrapper">
+			<div class="container">
+
+				<article class="site-content">
+					<h1>Assignment 9: Linked List Manipulation</h1>
+
+
+
+					
+<p>##Lab</p>
+
+<p><strong>IMPORTANT: Do not modify the provided toString method in the ListItem class, since our automated tests depend on the specific formatting it produces.</strong></p>
+
+<p>##Project: Linked List Manipulation</p>
+
+<p>In Module 8, you used the LinkedList class as an abstraction to represent the coefficients of polynomials.  However, the internal representation was encapsulated within each LinkedList object and you operated on it only in terms of the methods in the List interface. In this lab, you will be working with directly with “raw” list structure, using references to traverse lists and manipulating references to change the structure of lists.</p>
+
+<p>In the file <code class="highlighter-rouge">ListItem.java</code>, write methods for the ListItem class that satisfisfy the following specifications. In each case, be sure to use recursion or iteration as specified. Where not indicated, you may choose either approach.</p>
+
+<ul>
+  <li><strong>Use the JUnit test cases in <kbd>ListItemTest</kbd> to guide the development of your methods, and continually test-as-you-go.</strong></li>
+</ul>
+
+<p><strong>Hints:</strong> Draw lots of pictures before writing any code.  Try small examples and hand simulate how your algorithm will work.  Use small lists for testing in JUnit so you can draw the corresponding pictures.  Then, if things don't work as expected, use the debugger to examine the list structure itself in memory.  To do this, set a breakpoint at a line in the test case where you want the debugger to pause.  Then, choose “debug as” instead of “run as” in Eclipse.  Use the “step over” and “step into” methods to single step through the code, and examine the list structure in the “variables” view by opening up the “next” references to see what they refer to.</p>
+
+<ol>
+  <li>
+    <p>A <strong>recursive</strong> method <code class="highlighter-rouge">duplicate</code> that takes no parameters and returns a new ListItem that begins a list containing the same numbers (but not the same ListItem objects) as the original list. <!-- (We did this one in class, but try to do it without looking at your notes.) --></p>
+  </li>
+  <li>
+    <p>A <strong>recursive</strong> method <code class="highlighter-rouge">length</code> that takes no parameters and returns the number of elements in the list. For example, the list (3 5 9 3 2 4) would have length 6.</p>
+  </li>
+  <li>
+    <p>An <strong>iterative</strong> method <code class="highlighter-rouge">stretch</code> that takes a positive number <code class="highlighter-rouge">n</code> as a parameter and returns a new ListItem beginning a list in which each of the numbers in the original list is repeated <code class="highlighter-rouge">n</code> times.  For example, if the original list is ( 6 7 6 9 ) and the parameter value is 2, then the new list returned is ( 6 6 7 7 6 6 9 9 ).</p>
+  </li>
+  <li>
+    <p>A method <code class="highlighter-rouge">find</code> that takes an integer <code class="highlighter-rouge">target</code> and returns the first ListItem in the list that contains the given number. If the target does not occur in the list, then <code class="highlighter-rouge">null</code> is returned.</p>
+  </li>
+  <li>
+    <p>A method <code class="highlighter-rouge">max</code> that returns the largest number in the list. Hint: You know that the maximum value must be at least as large as the number in the first ListItem.</p>
+  </li>
+  <li>
+    <p>In the file <strong>ListItem.java</strong>, write a <strong>static</strong> method that satisfies the following specification.  Remember that static methods are called directly on the ListItem class itself, rather than on ListItem objects.</p>
+  </li>
+</ol>
+
+<p>A <strong>recursive</strong> procedure <code class="highlighter-rouge">evenElements</code></p>
+
+<pre>
+PARAMETERS:   a ListItem reference, ls
+RETURN VALUE: a ListItem at the beginning of a list structure
+              containing copies of the even numbers in given list.
+                 for example, given input list ( 3 2 6 9 ), the
+                 return value would be the list ( 2 6 )
+</pre>
+
+<p>Make sure your code passes both unit tests in your repo before asking to demo.</p>
+
+				</article>
+			</div>
+
+	</div>
+	<script type="text/javascript" src="/cse131/_site/js/highlight.pack.js"></script>
+</body>
+</html>

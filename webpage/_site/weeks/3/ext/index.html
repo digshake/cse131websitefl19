@@ -1,0 +1,1100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>3.7 | CSE131: Computer Science I</title>
+  <meta name="description" content="  Authors  Ron K. CytronYou should see a minesweeper package in the extensions source folder.This assignment is described in the book, exercise 1.4.30, on pa...">
+
+  <link rel="stylesheet" href="/cse131/_site/css/main.css">
+  <link rel="canonical" href="https://www.cse.wustl.edu/cse131/_site/weeks/3/ext/">
+  <link rel="alternate" type="application/rss+xml" title="CSE131: Computer Science I" href="https://www.cse.wustl.edu/cse131/_site/feed.xml">
+</head>
+
+
+<body>
+	<div class="wrapper writeup">
+			<div class="container">
+				<nav class="site-nav">
+					<a href="../">&larr; Week 3 Overview</a>
+				</nav>
+				<article class="site-content">
+					<h1>Extension for Module 3:</h1>
+
+					
+						
+						
+						
+					
+						
+						
+						
+					
+						
+						
+						
+					
+						
+						
+						
+					
+						
+						
+						
+					
+						
+						
+						
+					
+						
+						
+						
+					
+						
+						
+						
+					
+						
+						
+						
+					
+						
+						
+						
+					
+						
+						
+						
+							<h2 id=1>Extension 3.1: Pascal's Triangle (3 points)</h2>
+							<dl>
+  <dt>Authors</dt>
+  <dd>
+    <p>Robert Sedgewick (book)</p>
+  </dd>
+</dl>
+
+<p>Take a look at the Wikipedia page on <a href="http://en.wikipedia.org/wiki/Pascal%27s_triangle">Pascal's Triangle</a>.  We will implement this using
+a two-dimensional array, so it may be easier to imagine the entries left-justified rather than
+in triangular form:</p>
+
+<pre>
+        column
+        0  1  2  3  4
+row
+0       1
+1       1  1
+2       1  2  1
+3       1  3  3  1
+4       1  4  6  4  1
+        .
+        .
+        .
+</pre>
+
+<p>Viewed as a two-dimensional array, the computation is specified
+as follows, for each entry at row <em>r</em> and column <em>c</em>:</p>
+
+<ul>
+  <li>If <em>c</em> is 0, then the entry is <code class="highlighter-rouge">1</code>.</li>
+  <li>If <em>c</em><code class="highlighter-rouge">==</code><em>r</em>, then the entry is <code class="highlighter-rouge">1</code>.</li>
+  <li>If <em>r</em><code class="highlighter-rouge">&lt;0</code> or <em>c</em><code class="highlighter-rouge">&lt;0</code> or <em>c</em><code class="highlighter-rouge">&gt;</code><em>r</em>, then the entry is <code class="highlighter-rouge">0</code> and is not shown.</li>
+  <li>Everywhere else, the entry is computed as the sum of the entries at:
+    <ul>
+      <li><em>r</em><code class="highlighter-rouge">-1</code>,<em>c</em></li>
+      <li><em>r</em><code class="highlighter-rouge">-1</code>,<em>c</em><code class="highlighter-rouge">-1</code></li>
+    </ul>
+  </li>
+</ul>
+
+<p>##Procedure</p>
+
+<ol>
+  <li>
+    <p>Open the <code class="highlighter-rouge">PascalsTriangle</code> class, found in the
+<code class="highlighter-rouge">arrays</code> package of the <code class="highlighter-rouge">extensions</code> folder.</p>
+  </li>
+  <li>
+    <p>Insert code to obtain from the user the value <em>N</em> which is the number of
+rows you should compute of the triangle.</p>
+  </li>
+  <li>
+    <p>Instantiate the two-dimensional array needed to hold the results.</p>
+
+    <blockquote>
+      <p>Java lets you do this as a <em>ragged</em> array, where each row can be of
+a different length.</p>
+
+      <p>You are welcome to instantiate the array that way, but
+it is simpler and equally acceptable to instantiate the array with the same 
+number of columns in each row.  Java syntax for that is <em>much</em> simpler.
+An example of this appears in <code class="highlighter-rouge">SelfAvoidingWalk</code>,
+found in the
+<code class="highlighter-rouge">book.ch1</code> package of the <code class="highlighter-rouge">book</code> source folder
+in your repositories.</p>
+    </blockquote>
+  </li>
+  <li>
+    <p>Compute the triangle as a two-dimensional array and print the results 
+left-justified as shown above.</p>
+  </li>
+  <li>
+    <p>For extra fun, try to print the triangle centered as shown on
+the <a href="http://en.wikipedia.org/wiki/Pascal%27s_triangle">Wikipedia page</a>.</p>
+  </li>
+</ol>
+
+							<h1>Submitting your work</h1>
+
+							<p>To submit your work, contact the instructor or a TA. They will walk you through the submission process. Be prepared to show them the work that you have done and answer their questions about it!</p>
+						
+					
+						
+						
+						
+							<h2 id=2>Extension 3.2: Birthday Problem (5 points)</h2>
+							<p>##Procedure</p>
+
+<blockquote>
+  <p>To make things simple, let's assume that all months have 31 days.</p>
+</blockquote>
+
+<ol>
+  <li>
+    <p>Open the <code class="highlighter-rouge">Birthday</code> class, found in the <code class="highlighter-rouge">arrays</code> package
+ of the <code class="highlighter-rouge">extensions</code> folder.</p>
+  </li>
+  <li>
+    <p>Insert code to obtain from the user the number of people <i>N</i> that will enter
+ the room.</p>
+  </li>
+  <li>
+    <p>For each person, randomly generate a month and day on which that person
+ was born.</p>
+  </li>
+  <li>
+    <p>Using a two-dimensional array that is indexed by month and by day,
+ keep track of the number of people born on that month and day.</p>
+
+    <p>For example, perhaps you randomly decide the person was born in month 4 and
+ day 28.</p>
+  </li>
+  <li>
+    <p>After processing all of the <i>N</i> people, iterate over your array
+ to compute:</p>
+
+    <ul>
+      <li>
+        <p>For each month, the fraction (or percentage) of people born in that month.</p>
+      </li>
+      <li>
+        <p>The average of the 12 values you computed for the above.</p>
+      </li>
+      <li>
+        <p>For each day, the fraction (or percentage) of people born on that day, whether in the same or in a different month.</p>
+      </li>
+      <li>
+        <p>The average of the 31 values you computed for the above.</p>
+      </li>
+      <li>
+        <p>The fraction (or percentage) of people born on exactly the same day.</p>
+      </li>
+    </ul>
+  </li>
+</ol>
+
+<p>Be careful!  A <code class="highlighter-rouge">1</code> entry means just one person was born on that particular day.  You are looking for the fraction of people who share a birthday with at least one other person.</p>
+
+							<h1>Submitting your work</h1>
+
+							<p>To submit your work, contact the instructor or a TA. They will walk you through the submission process. Be prepared to show them the work that you have done and answer their questions about it!</p>
+						
+					
+						
+						
+						
+							<h2 id=3>Extension 3.3: GC Content (2 points)</h2>
+							<dl>
+  <dt>Authors</dt>
+  <dd>
+    <p><a href="http://www.cs.wustl.edu/~cytron/">Ron K. Cytron</a></p>
+  </dd>
+</dl>
+
+<p>Computer science plays a large role in modern biology.  BioJava is a framework for working with biological data.  It provides a framework for using sequences and performing common biology functions.  In this extension you will be reading in a DNA sequence and computing its 
+GC-Content(http://en.wikipedia.org/wiki/GC-content).</p>
+
+<p>###Notes</p>
+<ul>
+  <li>
+    <p>You can find the Java files for this extension in the <code class="highlighter-rouge">extensions</code> source folder.</p>
+
+    <blockquote>
+      <p>Locate the following files in the <code class="highlighter-rouge">biojavagc</code> package:</p>
+      <ul>
+        <li>
+          <p><code class="highlighter-rouge">GCContent.java</code> is the file you complete.  When you run it,
+analysis is performed on four genomes and the results are printed as output.</p>
+        </li>
+        <li>
+          <p><code class="highlighter-rouge">GCContentTest.java</code> is a unit test for your work.  You will
+receive credit for this extension only if this test passes.</p>
+        </li>
+      </ul>
+    </blockquote>
+  </li>
+  <li>
+    <p>You can do this extension by following the instructions below.
+However, you might want to take some time to familiarize yourself with the  <a href="http://biojava.org/wiki/Main_Page">BioJava website</a>.<br />
+Of special importance is the <a href="http://biojava.org/wiki/BioJava:CookBook">BioJava Cookbook</a>.  The cookbook 
+has information and examples for performing common tasks.  You may also find the <a href="http://www.biojava.org/docs/api/index.html">BioJava API</a> helpful.</p>
+  </li>
+  <li>
+    <p>You will be working with some DNA sequences,
+represented in the <a href="http://en.wikipedia.org/wiki/FASTA_format">FASTA format</a>,
+which you can find in the <code class="highlighter-rouge">genomes</code> folder of your workspace:</p>
+
+    <ul>
+      <li><code class="highlighter-rouge">NC_002677.fasta</code></li>
+      <li><code class="highlighter-rouge">mysterya.fasta</code></li>
+      <li><code class="highlighter-rouge">mysteryb.fasta</code></li>
+      <li><code class="highlighter-rouge">mysteryc.fasta</code></li>
+    </ul>
+
+    <blockquote>
+      <p>As you might guess from their names, there is an air of mystery surrounding
+some of these genomes.</p>
+
+      <p>Consider a bacterium and a phage that might be hosted by that
+bacterium.  It turns out that the DNA of the host and of the phage often need
+to be similar in terms of their GC content for the bacterium to play host
+to the phage:</p>
+
+      <p>Most bacteriophage and other bacteria are lower in GC content than Salmonella and its relatives, so invading DNA is an obvious target for H-NS. "It's like a primitive immune system," says Fang. "Reduce their expression, and the foreign genes can be tolerated."</p>
+
+      <p>From <a href="http://www.ncbi.nlm.nih.gov/pmc/articles/PMC2064161/">http://www.ncbi.nlm.nih.gov/pmc/articles/PMC2064161/</a></p>
+    </blockquote>
+
+    <p>In other words, if the GC content in the bacterium and phage is dissimilar, the bacterium may be
+  immune to infection by the phage.</p>
+  </li>
+</ul>
+
+<p>##Procedure</p>
+<ol>
+  <li>
+    <p>Complete the method <code class="highlighter-rouge">percentGC</code>  in <code class="highlighter-rouge">GCContent</code>.</p>
+
+    <blockquote>
+      <p>Note: BioJava already has a function to get the GC-count (number of G and C nucleotides) of a sequence.</p>
+
+      <p><strong>Do not use this function.</strong></p>
+
+      <p>Instead, devise a way to
+iterate through the array of characters (representing nucleotides) yourself.</p>
+    </blockquote>
+  </li>
+  <li>
+    <p>Run the unit test <code class="highlighter-rouge">GCContentTest</code>  and make sure it passes.</p>
+
+    <blockquote>
+      <p>Most students' code fails when given a string with no DNA in it whatsover
+(an empty string or <code class="highlighter-rouge">""</code>.  Its GC content is 0%.</p>
+    </blockquote>
+  </li>
+</ol>
+
+							<h1>Submitting your work</h1>
+
+							<p>To submit your work, contact the instructor or a TA. They will walk you through the submission process. Be prepared to show them the work that you have done and answer their questions about it!</p>
+						
+					
+						
+						
+						
+							<h2 id=4>Extension 3.4: Reading Frame of a Sequence (10 points)</h2>
+							<dl>
+  <dt>Authors</dt>
+  <dd>
+    <p><a href="http://www.cs.wustl.edu/~cytron/">Ron K. Cytron</a></p>
+  </dd>
+</dl>
+
+<p>Sequences of nucleotides can be read as sequences of nucleotide triplets, known as <a href="http://en.wikipedia.org/wiki/Codon">codons</a>.  This means there are 3 different ways of reading a nucleotide sequence.<br />
+One starts with the first nucleotide in the sequence, one starts with the second, and one starting with the third, as shown below:</p>
+
+<p><img src="../../../extensions/frame.jpg" /></p>
+
+<p>Image from <a href="https://wikispaces.psu.edu/display/Biol230WFall09/Protein+Translation">https://wikispaces.psu.edu/display/Biol230WFall09/Protein+Translation</a></p>
+
+<ul>
+  <li>
+    <p>The sequences shown above are RNA.  The corresponding DNA sequences would have a <code class="highlighter-rouge">T</code> everywhere you see a <code class="highlighter-rouge">U</code>.</p>
+  </li>
+  <li>
+    <p>Reading frame 1 begins at the first nucleotide.  Interpreting <code class="highlighter-rouge">AGT</code> using the <a href="http://en.wikipedia.org/wiki/DNA_codon_table">genetic code</a>,  Serine would be generated as the first amino acid of the resulting protein, if this is the proper reading frame.</p>
+  </li>
+  <li>
+    <p>However, if the reading frame should start one base later, then the first DNA triple is <code class="highlighter-rouge">GTC</code>, which encodes Valine.</p>
+  </li>
+  <li>
+    <p>Finally, if  the reading frame should start two bases later, then the first DNA triple is <code class="highlighter-rouge">TCT</code>, which encodes Serine.  While this protein begins with the same amino acid as in reading frame 1, the next amino acid is different, as shown in the above figure.</p>
+  </li>
+  <li>
+    <p>There is no other reading frame of interest.  If we considered a 
+reading frame that begins at the fourth nucleotide, that is the same as if
+the frame began at the first nucleotide.</p>
+  </li>
+  <li>
+    <p><strong>Important:</strong> In the picture above, the reading frames are denoted 1, 2, or 3.  Keeping with computer science custom, you must compute these as 0, 1, or 2.   The unit test will not work if you fail to follow this convention!</p>
+  </li>
+</ul>
+
+<p>How do we determine which reading frame is correct?  Our approach is based
+on the following observations, which are somewhat simplified to suit our 
+purposes.  The interested student is encouraged to take Bio 2960 for
+a much more thorough and revealing treatment of this material.</p>
+
+<ul>
+  <li>
+    <p>Protein translation is initiated only by a special sequence of 3 nucleotides called a  <a href="http://en.wikipedia.org/wiki/Start_codon">start codon</a>.</p>
+  </li>
+  <li>
+    <p>Translation continues until a <a href="http://en.wikipedia.org/wiki/Stop_codon">stop codon</a> is encountered, which is also a specially designated sequence of 3 DNA nucleotides.</p>
+
+    <p>Note that it is the <em>first</em> stop codon that ends the translation.<br />
+  While the translated region could contain other start codons, which translate
+  as the amino acid methionine, <em>any</em> stop codon encounered after
+  the start codon ends the translation process.</p>
+  </li>
+  <li>
+    <p>If we scan random DNA, we expect each of the four bases (A, T, C, G) to occur with probability 1 in 4.</p>
+  </li>
+  <li>
+    <p>If we look for two specific bases, one after the other, in random DNA, scanning pairs a time, we expect the two bases to occur with probability 1 in 16 (1 in 4 times 1 in 4).</p>
+  </li>
+  <li>
+    <p>If we scan DNA looking for a specific triplet, moving 3 bases each time we look, we expect that given triplet to occur with probability 1 in 64 (1 in 4 times 1 in 4 times 1 in 4).</p>
+
+    <p>For example, we expect the start codon to occur with probability 1 in 64.</p>
+  </li>
+  <li>
+    <p>Because there are three possible stop codons, the probability in random DNA that a given triplet is one of the three stop codons is 3 in 64, which is approximately 1 in 20.</p>
+  </li>
+  <li>
+    <p>This means that if DNA is random, a protein sequence would be about 20 amino acids in length, once its start codon is found.</p>
+  </li>
+  <li>
+    <p>It turns out that proteins are much longer than that, say at least 60 amino acids in length.</p>
+  </li>
+  <li>
+    <p>If we start in the wrong reading frame, the DNA should appear to us as random, and we should obtain very short amino acid chains by translation.</p>
+  </li>
+</ul>
+
+<p>Thus, the best reading frame for a sequence of DNA is the offset at which translation would produce the <strong>longest chain of amino acids</strong>.  The DNA sequence that produces that chain begins with the start codon.  The start codon and all subsequent codons are interpreted in groups of 3 bases.  The sequence  contains no stop codon until the end of the translated region.  In other words, the translated region may contain multiple start codons in the middle (which are translated as the amino acid methionine), but the region contains no stop codons in the middle.</p>
+
+<p>Your task in this extension is to analyze a sequence of DNA to determine its best reading frame.</p>
+
+<p>##Notes</p>
+
+<p>You can find the Java files for this extension in the <code class="highlighter-rouge">extensions</code> source folder.</p>
+
+<p>Locate the following files in the <code class="highlighter-rouge">biofindframe</code> package:</p>
+
+<ul>
+  <li>
+    <p><code class="highlighter-rouge">FindTheFrame.java</code> is the file you complete.</p>
+  </li>
+  <li>
+    <p><code class="highlighter-rouge">FindTheFrameTest.java</code> is a unit test for your work.</p>
+
+    <p>You will receive credit for this extension if this test (usually) passes.</p>
+  </li>
+  <li>
+    <p>You will be working with some DNA sequences, represented in the <a href="http://en.wikipedia.org/wiki/FASTA_format">FASTA format</a>, which you can find in the <code class="highlighter-rouge">genomes</code> folder of your workspace.</p>
+  </li>
+</ul>
+
+<p>##Procedure</p>
+
+<ol>
+  <li>
+    <p>The code given to you prompts the user for a genome DNA file, and then reads that file into a <code class="highlighter-rouge">char</code> array using methods provided by <a href="http://biojava.org/wiki/Main_Page">bioJava</a>.</p>
+
+    <p>If you are uncertain about <code class="highlighter-rouge">char</code> arrays, this would be a good time to review the relevant material in your text and in the lecture notes.</p>
+  </li>
+  <li>
+    <p>Your work takes place in the method <code class="highlighter-rouge">bestReadingFrame</code>. Open that file now and take a look at what is provided.</p>
+
+    <p>There are comments in that file to direct your work, which consists of the steps described below.</p>
+
+    <p>You should read these instructions and the comments <em>carefully</em> before you begin. Solutions that fail to follow the instructions will receive no credit!</p>
+  </li>
+  <li>
+    <p>First, define 3 <code class="highlighter-rouge">char</code> arrays, one for each of the possible <a href="http://en.wikipedia.org/wiki/Genetic_code#Start.2Fstop_codons">stop codons</a>: ochre, amber, and opal.</p>
+  </li>
+  <li>
+    <p>Next, define a <code class="highlighter-rouge">char</code> array named <code class="highlighter-rouge">methionine</code> for the start codon.</p>
+
+    <p>The most common start codon is Methionine, which is encoded by the DNA sequence <code class="highlighter-rouge">AUG</code>.  For the purposes of this extension, Methionine is the only start codon you will consider.</p>
+
+    <p>More information about start and stop codons can be found <a href="http://en.wikipedia.org/wiki/Genetic_code#Start.2Fstop_codons">here</a>.</p>
+  </li>
+  <li>
+    <p>The rest of the code you write will attempt to read the DNA in each of the possible 3 reading frames. Find the best reading frame and return the index at which that best reading frame occurs.  Thus, your method will return a value as follows:</p>
+
+    <ol>
+      <li>
+        <p>0, if reading frame 1 is the right answer.  That frame begins at index 0 of the <code class="highlighter-rouge">dna</code> array you are given.</p>
+      </li>
+      <li>
+        <p>1, if reading frame 2 is the right answer.  That frame begins at index 1 of the <code class="highlighter-rouge">dna</code> array you are given.</p>
+      </li>
+      <li>
+        <p>2, if reading frame 3 is the right answer.  That frame begins at index 2 of the <code class="highlighter-rouge">dna</code> array you are given.</p>
+      </li>
+      <li>
+        <p>-1 if no reading frame exists at all</p>
+      </li>
+    </ol>
+  </li>
+</ol>
+
+<p><strong>Hint:</strong>  Scan the DNA one base a time, looking for the longest coding sequence that begins at that base.  A coding sequence begins with a start codon and ends at the next stop codon that is found by scanning triplets.</p>
+
+<p>Based on the index at which the <i>longest</i> coding sequence occurs, compute the corresponding reading frame (0, 1, or 2).  That is the value you want to return.</p>
+
+							<h1>Submitting your work</h1>
+
+							<p>To submit your work, contact the instructor or a TA. They will walk you through the submission process. Be prepared to show them the work that you have done and answer their questions about it!</p>
+						
+					
+						
+						
+						
+							<h2 id=5>Extension 3.5: Data Sorting and Analysis (5 points)</h2>
+							<dl>
+  <dt>Authors</dt>
+  <dd>Brennan Morell</dd>
+  <dd>Jarett Gross</dd>
+</dl>
+
+<p>A big part of Computer Science revolves around finding ways
+to sort data to be organized in a useful manner. There are many different algorithms
+that computer scientists use to sort information. You can learn about a few popular ones below:</p>
+
+<ul>
+  <li><a href="https://en.wikipedia.org/wiki/Selection_sort">Insertion Sort</a></li>
+  <li><a href="https://en.wikipedia.org/wiki/Merge_sort">Merge Sort</a></li>
+  <li><a href="https://en.wikipedia.org/wiki/Quicksort">Quick Sort</a></li>
+</ul>
+
+<blockquote>
+  <p>For the purposes of this assignment,
+we will implement our sorting using a naive process of repeatedly selecting the smallest value
+from a data set of type <code class="highlighter-rouge">int[]</code>, and swapping it to the front of the collection. In computer science,
+this is called a <a href="https://en.wikipedia.org/wiki/Insertion_sort">Selection Sort</a>.</p>
+</blockquote>
+
+<p>##Procedure</p>
+<ol>
+  <li>
+    <p>Open the <code class="highlighter-rouge">Sorting</code> class, found in the <code class="highlighter-rouge">arrays</code> package
+of the <code class="highlighter-rouge">extensions</code> folder.</p>
+  </li>
+  <li>
+    <p>Prompt the user for the <code class="highlighter-rouge">size</code> of the collection</p>
+
+    <blockquote>
+      <p>If the user enters a negative number, continue to prompt them with a useful message until they enter a positive number.</p>
+    </blockquote>
+  </li>
+  <li>
+    <p>Continue to prompt the user to input numbers one at a time, using an array to store the input data.</p>
+  </li>
+  <li>
+    <p>After processing all of the numbers entered, the data will be sorted using the following naive algorithm:</p>
+
+    <blockquote>
+      <ul>
+        <li>Create an <code class="highlighter-rouge">int sortCount</code> to keep track of the number of times you've scanned the data
+	&gt;</li>
+        <li>
+          <p>Create an outer loop to limit the number of scans to be equal to the size of the collection (<code class="highlighter-rouge">while(sortCount &lt; size)</code>)</p>
+        </li>
+        <li>
+          <p>Create an inner loop to iterate over the unsorted portion of the array, each time selecting the minimum value (keep track of this value and its index in the array)</p>
+
+          <p>The unsorted portion will always be the sub-array with indexes <code class="highlighter-rouge">sortCount</code> to <code class="highlighter-rouge">size</code> inclusive.</p>
+        </li>
+        <li>
+          <p>Swap this minimum value with the value currently at the head of the unsorted portion of the array</p>
+        </li>
+        <li>At this point, <code class="highlighter-rouge">sortCount</code> should be incremented to reflect the new unsorted portion of the array.</li>
+      </ul>
+
+      <p><img src="http://www.piratelearner.com/static/media/images/admin/2015/10/13/selection.gif" alt="" /></p>
+    </blockquote>
+  </li>
+  <li>
+    <p>After the sorting the data, we will take advantage of its useful organization to compute the following statistics:</p>
+
+    <p>Mean: The simple average of the data.</p>
+
+    <p>Median: The middle value in the ordered dataset (Note: How does this computation vary for even and odd sized datasets?)</p>
+
+    <p>Min: The smallest value in the ordered dataset.</p>
+
+    <p>Max: The largest value in the ordered dataset.</p>
+
+    <p>Range: The difference between the maximum and minimum values of the data set.</p>
+  </li>
+  <li>
+    <p>Finally, arrange for your output to display the sorted dataset and accompanying statistics in the following manner:</p>
+
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code> 1 2 3 4 5 
+	
+ Mean: 3.0
+	
+ Median: 3.0
+	
+ Min: 1
+	
+ Max: 5
+	
+ Range: 4
+</code></pre></div>    </div>
+  </li>
+</ol>
+
+							<h1>Submitting your work</h1>
+
+							<p>To submit your work, contact the instructor or a TA. They will walk you through the submission process. Be prepared to show them the work that you have done and answer their questions about it!</p>
+						
+					
+						
+						
+						
+							<h2 id=6>Extension 3.6: Blackjack! (7 points)</h2>
+							<dl>
+  <dt>Authors</dt>
+  <dd>Nathan Vogt</dd>
+</dl>
+
+<p>##Introduction</p>
+
+<p>In this assignment, we create the game <a href="https://en.wikipedia.org/wiki/Blackjack"> blackjack</a>, the most widely played casino banking game in the world. In blackjack, each player plays against the dealer, not the other players. The goal of blackjack  is to beat the dealer by attaining a score (the sum of the values of your cards) higher than the dealer's score without exceeding 21.  Also, many casinos use an 8 deck shoe (meaning eight 52 card decks shuffled together). This practice prevents players from  <a href="https://en.wikipedia.org/wiki/Card_counting">counting cards</a>.</p>
+
+<p>##Background</p>
+
+<ul>
+  <li>
+    <p>For this implementation, there is a dealer, one human player, and <code class="highlighter-rouge">p</code> autonomous players.</p>
+  </li>
+  <li>
+    <p>Everyone is initially dealt a two card hand</p>
+
+    <ul>
+      <li>
+        <p>All players' cards are visible to all players and the dealer. The dealer, however, has only his or her second-dealt card showing at this point.</p>
+      </li>
+      <li>
+        <p>The <em>value</em> of a hand is the sum of that hand's cards' values.  A card's value is determined as follows:</p>
+
+        <ul>
+          <li>
+            <p>If the card's rank is between 2 and 9, then the card's value is its rank. Thus, the 4 of Diamonds is worth 4 points.</p>
+          </li>
+          <li>
+            <p>A face card is worth 10 points.  Thus, the King of Spades is worth 10 points.</p>
+          </li>
+          <li>
+            <p>An ace is worth 11 points.  Thus, the Ace of Hearts is worth 11 points.</p>
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <p>After the initial deal is complete, the dealer turns to the first player (which will be you, the human), and asks if you want to <em>hit</em> or <em>stand</em>.
+<br /></p>
+  </li>
+</ul>
+
+<dl>
+  <dt>hit</dt>
+  <dd>means that you take one more card.  The value of that card is then added to the value of your hand. If you still have 21 points or fewer, the dealer will continue to ask if you want to hit.   The dealer will not move on to another player until you <em>stand</em> or have <em>busted</em>. If by hitting you have exceeded 21 points, you have <em>busted</em> and you have lost your bet to the dealer. The dealer moves on to the next player.
+<br /></dd>
+  <dt>stand</dt>
+  <dd>means that you do not want any more cards.  Your play in this round is complete.   The dealer moves on to the next player.</dd>
+</dl>
+
+<ul>
+  <li>
+    <p>The dealer then moves to the next player using the above protocol.</p>
+  </li>
+  <li>
+    <p>When the last player has finished interacting with the dealer, the
+dealer then performs the following steps:</p>
+
+    <ul>
+      <li>
+        <p>The dealer's hidden card is revealed.</p>
+      </li>
+      <li>
+        <p>The dealer continues to hit until the dealer's hand's value is 17 or higher, or the dealer has busted.</p>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <p>If the dealer busted, then all players who did not previously bust win against the dealer.</p>
+  </li>
+  <li>
+    <p>If the dealer did not bust, then all players whose hands have value in excess of the dealer's hand's value win against the dealer.</p>
+  </li>
+  <li>
+    <p>All players whose hands have value less than the dealer's hand's value lose to the dealer.</p>
+  </li>
+  <li>
+    <p>A player whose hand's value equals the dealer's hand's value has <em>pushed</em>, and has neither won nor lost money.</p>
+  </li>
+</ul>
+
+<p>##Procedure</p>
+
+<ol>
+  <li>
+    <p>Prompt the user for how many autonomous players, <code class="highlighter-rouge">p</code>, to have at the table, and how many games to play.</p>
+  </li>
+  <li>
+    <p>Create a new array to keep track of everyone's scores, including yourself and the dealer.</p>
+  </li>
+  <li>
+    <p>Construct a loop that will simulate the number of games to be played. Hint: We will have to reset each player's score  between games.</p>
+  </li>
+  <li>
+    <p>Next, create a mechanism that simulates the initial deal of two cards to each player. We must simulate drawing a random card.  Because the suit of the card is not important for this game, we can think of the  deck as only 13 possible cards with equal likelihood of being drawn. Use randomness to draw a card and then calculate its value.</p>
+
+    <p>Remember that cards 2-9 will count as their number, 10-King all count as 10, and Aces count as 11.</p>
+  </li>
+  <li>
+    <p>Verify that the array stores each player's score correctly. A player's score must be the sum of both cards drawn.</p>
+  </li>
+  <li>
+    <p>Now we've reached the decision moment in blackjack. Each player decides whether to <em>hit</em> or <em>stand</em>.  Start with the human player.</p>
+
+    <p>Prompt the human player for their move. In order to make this decision, the human player should be able to see their score and the dealer's face-up card. In addition, after each hit, the human player should see their updated score.</p>
+  </li>
+  <li>
+    <p>Once the human player is finished (either by stand, bust, or blackjack), simulate the autonomous players and then the dealer.</p>
+
+    <p>The dealer follows the casino rule to hit until his score equals 17 or higher and then stand. Let's assume that  the autonomous players follow the same rule. You can copy and paste the same game mechanics you used earlier to draw cards.</p>
+  </li>
+  <li>
+    <p>After the dealer finishes his turn, print out the results of that game. Reminder: if a player busts, then they lose. If the dealer  busts, all the players that did not bust win. If neither busts, players with a higher score than the dealer win and players with  a lower score lose. If a player's score equals the dealer's (non-bust), then it is a tie, called a push.</p>
+
+    <ul>
+      <li>
+        <p>What was the final score of each player and the dealer?</p>
+      </li>
+      <li>
+        <p>Which players won?</p>
+      </li>
+      <li>
+        <p>Which players busted?</p>
+      </li>
+      <li>
+        <p>Did any players get a blackjack?</p>
+      </li>
+      <li>
+        <p>Did any players push?</p>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <p>After all the games have ended, print out the percentage of the games that the human won.</p>
+  </li>
+  <li>
+    <p>Here is a sample solution. In this implementation, player 0 is the dealer, player 1 is the human player,  and players 2 and 3 are autonomous players. Notice that the human player got three blackjacks out of four games!  This is very rare.</p>
+  </li>
+</ol>
+
+<pre>
+You chose to play 4 games
+There are 2 autonomous players playing.
+
+Game 1
+The dealer's face-up card has the value of 10
+The players' scores are: 
+21 18 12 
+The Dealer's face-up card has the value of 10. And your current count is 21
+You chose to stand!
+
+Player 0 got 20
+Player 1 got Blackjack! (21)
+ Player 1 beats the dealer!
+Player 2 got 18
+Player 3 got 20
+ Player 3 pushed with 20
+
+Game 2
+The dealer's face-up card has the value of 8
+The players' scores are: 
+15 17 16 
+The Dealer's face-up card has the value of 8. And your current count is 15
+You hit!
+
+Player 0 got 19
+Player 1 Busts! 26
+Player 2 got 17
+Player 3 Busts! 23
+
+Game 3
+The dealer's face-up card has the value of 9
+The players' scores are: 
+15 14 15 
+The Dealer's face-up card has the value of 9. And your current count is 15
+You hit!
+The Dealer's face-up card has the value of 9. And your current count is 21
+Would you like to hit?
+You chose to stand!
+
+Player 0 got 17
+Player 1 got Blackjack! (21)
+ Player 1 beats the dealer!
+Player 2 Busts! 24
+Player 3 Busts! 22
+
+Game 4
+The dealer's face-up card has the value of 11
+The players' scores are: 
+14 19 7 
+The Dealer's face-up card has the value of 11. And your current count is 14
+You hit!
+The Dealer's face-up card has the value of 11. And your current count is 21
+Would you like to hit?
+You chose to stand!
+
+Player 0 got Blackjack! (21)
+Player 1 got Blackjack! (21)
+ Player 1 pushed with 21
+Player 2 got 19
+Player 3 got 17
+
+The fraction of human wins was 0.5
+</pre>
+
+<p>Optional tasks:</p>
+
+<ol>
+  <li>
+    <p>Create a different prescribed formula for the autonomous players, perhaps involving an element of randomness.</p>
+  </li>
+  <li>
+    <p>Create a betting system (perhaps similar to gambler's ruin) where you can win or lose money each game. Getting a blackjack wins you 150% of your bet!</p>
+  </li>
+  <li>
+    <p>Alter the game mechanics so that aces can be counted as 1 or 11.</p>
+  </li>
+  <li>
+    <p>Implement another human decision such as split or double down.</p>
+  </li>
+  <li>
+    <p>Instead of copy and pasting the game dynamics, create a method for the game mechanics. (This task would satisfy extension 5.1 Methodize It)</p>
+  </li>
+</ol>
+
+							<h1>Submitting your work</h1>
+
+							<p>To submit your work, contact the instructor or a TA. They will walk you through the submission process. Be prepared to show them the work that you have done and answer their questions about it!</p>
+						
+					
+						
+						
+						
+							<h2 id=7>Extension 3.7: Minesweeper (8 points)</h2>
+							<dl>
+  <dt>Authors</dt>
+  <dd><a href="http://www.cs.wustl.edu/~cytron/">Ron K. Cytron</a></dd>
+</dl>
+
+<p>You should see a <code class="highlighter-rouge">minesweeper</code> package in the <code class="highlighter-rouge">extensions</code> source folder.</p>
+
+<p>This assignment is described in the book, exercise 1.4.30, on page 118.  Begin by reading that exercise to make sure you understand the task assigned to you for this lab.</p>
+
+<p>You may find the exercise online <a href="http://introcs.cs.princeton.edu/java/14array/"> here</a>, as Creative Exercise 30.</p>
+
+<ul>
+  <li>
+    <p>The file you will modify for this assignment is <code class="highlighter-rouge">MineSweeper.java</code>.  It is already in the respository.</p>
+  </li>
+  <li>
+    <p>That file already prompts for the number of columns, rows, and the probability of a bomb.</p>
+
+    <p>Do not change that part of the file.  The file is very clear about where you are to insert your code.</p>
+  </li>
+  <li>
+    <p>Create the output as prescribed in the book's exercise.</p>
+  </li>
+</ul>
+
+<p>You <strong>must</strong> use the <code class="highlighter-rouge">\*</code> and <code class="highlighter-rouge">.</code> characters as shown in the book.  Otherwise, the visual version of this game (described below) will not work correctly.</p>
+
+<p>Your output <strong>must</strong> include both the left and right parts of each line as described below.</p>
+
+<p>The example given in the book is reproduced below:</p>
+
+<pre>
+
+* * . . .    * * 1 0 0
+. . . . .    3 3 2 0 0
+. * . . .    1 * 1 0 0
+
+</pre>
+
+<p>You must produce output that matches the form you see above:</p>
+
+<ul>
+  <li>
+    <p>Each line's <strong>left part</strong> displays the locations of the bombs (denoted by <code class="highlighter-rouge">*</code>) and the non-bombs (denoted by <code class="highlighter-rouge">.</code>).</p>
+  </li>
+  <li>
+    <p>Each line's <strong>right part</strong> reports a <code class="highlighter-rouge">*</code> where there is a bomb and the count of bombs that border that cell where there is <em>not</em> a bomb.</p>
+
+    <p>For example:</p>
+
+    <ol>
+      <li>
+        <p>The leftmost entry of the second row has no bomb.  In the left part of the second row, a dot is shown.  Its corresponding entry in the right part of the second row shows the number <code class="highlighter-rouge">3</code>, which is the sum of the bombs found on that cell's eight neighbors. Because this cell is left-most in the grid, some of its neighbors do not exist, but they are thus assumed to have no bombs.</p>
+      </li>
+      <li>
+        <p>The mine field's central entry also has no bomb and shows a <code class="highlighter-rouge">2</code> in the right part of the output.   Those two bombs can be found in the upper-left and lower-left cells with respect to that center cell's eight neighbors.</p>
+      </li>
+    </ol>
+
+    <p>The book provides a nice hint about an implementation that eliminates special cases around the edges of the field.</p>
+  </li>
+  <li>
+    <p>Run <code class="highlighter-rouge">MineSweeper</code> as a Java Application and be sure your results look correct before you demo.</p>
+
+    <p>Test on very small (say, 3x2) mine fields at first.  Enlarge the fields and test again, making certain the output is correct.</p>
+
+    <p>Make sure it includes both the left and right parts of each line as described above.</p>
+  </li>
+  <li>
+    <p>When your program is complete (or, actualy, even prior to that), you can run a visual version of your game by running <code class="highlighter-rouge">Game</code> as a Java Application.</p>
+
+    <ul>
+      <li>Our <code class="highlighter-rouge">Game</code> program runs your <code class="highlighter-rouge">MineSweeper</code> code, but hijacks the output for its own use.</li>
+    </ul>
+
+    <p>The output you produce is therefore the <em>interface</em> between:</p>
+
+    <ul>
+      <li>
+        <p>Your code that computes the maze, in particular, the location of bombs, and</p>
+      </li>
+      <li>
+        <p>The class-provided code that runs the visual version of the game.</p>
+      </li>
+    </ul>
+
+    <p>That class-provided code has tried to be tolerant of the output you might produce.  If it is not working for you, let us know.</p>
+
+    <ul>
+      <li>
+        <p>It builds a visual board based on your output.</p>
+      </li>
+      <li>
+        <p>It also shows the output you produced in the console window.</p>
+      </li>
+    </ul>
+
+    <p>To play the visual version of the game:</p>
+
+    <ul>
+      <li>
+        <p>Right-click on squares where you think there is a bomb.</p>
+      </li>
+      <li>
+        <p>Left-click on a square that has no bomb to show you the count of the number of bombs that border that square.</p>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+							<h1>Submitting your work</h1>
+
+							<p>To submit your work, contact the instructor or a TA. They will walk you through the submission process. Be prepared to show them the work that you have done and answer their questions about it!</p>
+						
+					
+						
+						
+						
+					
+						
+						
+						
+					
+						
+						
+						
+					
+						
+						
+						
+					
+						
+						
+						
+					
+						
+						
+						
+					
+						
+						
+						
+					
+						
+						
+						
+					
+						
+						
+						
+					
+						
+						
+						
+					
+						
+						
+						
+					
+						
+						
+						
+					
+						
+						
+						
+					
+						
+						
+						
+					
+						
+						
+						
+					
+						
+						
+						
+					
+						
+						
+						
+					
+						
+						
+						
+					
+						
+						
+						
+					
+						
+						
+						
+					
+						
+						
+						
+					
+						
+						
+						
+					
+						
+						
+						
+					
+						
+						
+						
+					
+						
+						
+						
+					
+						
+						
+						
+					
+						
+						
+						
+					
+						
+						
+						
+					
+						
+						
+						
+					
+						
+						
+						
+					
+						
+						
+						
+					
+						
+						
+						
+					
+						
+						
+						
+					
+						
+						
+						
+					
+						
+						
+						
+					
+						
+						
+						
+					
+						
+						
+						
+					
+				</article>
+			</div>
+
+			<footer class="site-footer">
+	<p>
+		<small>Generated at  2019-08-18 15:57:40 -0500</small>.
+	</p>
+	<p>
+		<small>
+			Page written by (unknown).
+			Site design by <a href="http://ben.stolovitz.com">Ben Stolovitz</a>.
+		</small>
+	</p>
+</footer>
+
+	</div>
+	<script type="text/javascript" src="/cse131/_site/js/highlight.pack.js"></script>
+</body>
+</html>

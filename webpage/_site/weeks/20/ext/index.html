@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>4.11 | CSE131: Computer Science I</title>
+  <meta name="description" content="  Authors      Nick Leidenfrost    Jonathan Wetherbee  Heather Berlin  Elie SchrammComputers have feelings too! In this assignment you create Emerson the Emo...">
+
+  <link rel="stylesheet" href="/cse131/_site/css/main.css">
+  <link rel="canonical" href="https://www.cse.wustl.edu/cse131/_site/weeks/20/ext/">
+  <link rel="alternate" type="application/rss+xml" title="CSE131: Computer Science I" href="https://www.cse.wustl.edu/cse131/_site/feed.xml">
+</head>
+
+
+<body>
+	<div class="wrapper writeup">
+			<div class="container">
+				<nav class="site-nav">
+					<a href="../">&larr; Week 20 Overview</a>
+				</nav>
+				<article class="site-content">
+					<h1>Extension for Module 20:</h1>
+
+					
+						
+						
+						
+					
+						
+						
+						
+					
+						
+						
+						
+					
+						
+						
+						
+					
+						
+						
+						
+					
+						
+						
+						
+					
+						
+						
+						
+					
+						
+						
+						
+					
+						
+						
+						
+					
+						
+						
+						
+					
+						
+						
+						
+					
+						
+						
+						
+					
+						
+						
+						
+					
+						
+						
+						
+					
+						
+						
+						
+					
+						
+						
+						
+					
+						
+						
+						
+					
+						
+						
+						
+					
+						
+						
+						
+					
+						
+						
+						
+					
+						
+						
+						
+					
+						
+						
+						
+					
+						
+						
+						
+					
+						
+						
+						
+					
+						
+						
+						
+					
+						
+						
+						
+					
+						
+						
+						
+					
+						
+						
+						
+							<h2 id=11>Extension 20.11: Emerson the Emote (6 points)</h2>
+							<dl>
+  <dt>Authors</dt>
+  <dd>
+    <p>Nick Leidenfrost</p>
+  </dd>
+  <dd>Jonathan Wetherbee</dd>
+  <dd>Heather Berlin</dd>
+  <dd>Elie Schramm</dd>
+</dl>
+
+<p>Computers have feelings too! In this assignment you create Emerson the Emote – an animated face that displays emotions that the user selects. It has 3 slider bars: one for temperature, one for happiness/sadness, and one for an emotion pair of your choice.</p>
+
+<p>Below, you should see a video demonstrating a sample solution.</p>
+
+<video width="600" height="400" controls="">
+  <source src="../../../extensions/emerson.mp4" type="video/mp4" />
+  Your browser does not support the video tag.
+</video>
+
+<p>This assignment has been revived and adapted from a version written by Nick Leidenfrost, Jonathan Wetherbee, and Heather Berlin 
+in 2002, back when CSE131 was CS101! The idea has been kept, but it does not make use of objects.</p>
+
+<p>Your Emote must have these basic features:</p>
+
+<ul>
+  <li>
+    <p>a face</p>
+  </li>
+  <li>
+    <p>two eyes</p>
+  </li>
+  <li>
+    <p>a mouth</p>
+  </li>
+</ul>
+
+<p>You may incorporate more features for different emotions, such as eyebrows or eyelids.  Personalize Emerson however you like – ears, hair, nose, etc.</p>
+
+<p>##Procedure</p>
+
+<ol>
+  <li>
+    <p>In the <code class="highlighter-rouge">extensions</code> folder, find the <code class="highlighter-rouge">emote</code> package. You will write your code in the <code class="highlighter-rouge">Emerson</code> class and you can run it with the <code class="highlighter-rouge">EmersonController</code> class.</p>
+  </li>
+  <li>
+    <p>Emerson is created from the following specifications:</p>
+
+    <ol>
+      <li>
+        <p>x and y coordinates of the center of the face ( (.5, .5) is the center in the default canvas)</p>
+      </li>
+      <li>
+        <p>width and height of the frame for Emerson to be drawn within. The radius of its face must be less than or equal to the minimum of those two values in order for it to be confined to the frame.</p>
+      </li>
+      <li>
+        <p>the degree each emotion is felt (on a scale from -1 to 1 where 0 is neutral). Ex: <code class="highlighter-rouge">howHot</code></p>
+      </li>
+    </ol>
+  </li>
+  <li>
+    <p>Using Sedgewick’s <code class="highlighter-rouge">StdDraw</code>, create Emerson’s basic features in their neutral state. All the locations and sizes must be relative to the specifications listed above. For example: the mouth should always be around or below the center of the face; if you just put it at (.5, .3) then it wouldn’t stay on the face at different face coordinates.</p>
+  </li>
+  <li>
+    <p>Hot and cold aren’t really emotions, but that doesn’t prevent Emerson from feeling them too. The first slider will make it react to being cold and hot and all the temperatures in between by changing the color of its face. Make yellow the default color and make Emerson turn progressively more blue for cold and more red for hot as a function of the <code class="highlighter-rouge">howHot</code> variable. A value of 1 should correspond to complete red and a value of -1 should correspond to complete blue.</p>
+
+    <p>Emerson will be executed by the <code class="highlighter-rouge">EmersonController</code> class and all the animation will happen as a result of dragging 
+ the slider, so do not use the “clear” or “show” functions that you may have used in other drawing assignments.</p>
+  </li>
+  <li>
+    <p>Once Emerson can react to hot and cold, do the same for happy (1) and sad (-1). Keep in mind that you should not change the color of the face for this emotion as it would conflict with the display of temperature. In the video, happy and sad was controlled by the smile/frown, but you could implement it a different way if you like, as long as it’s clear what the emotion is and it doesn’t overlap with the animations of the other emotions.</p>
+  </li>
+  <li>
+    <p>Choose two more emotions for the third slider and animate them, such as surprised/bored, tired/alert, disgust/love, etc. 
+They must be in opposite pairs which are clearly distinct from each other and the previous emotions.</p>
+  </li>
+</ol>
+
+
+							<h1>Submitting your work</h1>
+
+							<p>To submit your work, contact the instructor or a TA. They will walk you through the submission process. Be prepared to show them the work that you have done and answer their questions about it!</p>
+						
+					
+						
+						
+						
+					
+						
+						
+						
+					
+						
+						
+						
+					
+						
+						
+						
+					
+						
+						
+						
+					
+						
+						
+						
+					
+						
+						
+						
+					
+						
+						
+						
+					
+						
+						
+						
+					
+						
+						
+						
+					
+						
+						
+						
+					
+						
+						
+						
+					
+						
+						
+						
+					
+						
+						
+						
+					
+						
+						
+						
+					
+						
+						
+						
+					
+						
+						
+						
+					
+						
+						
+						
+					
+						
+						
+						
+					
+						
+						
+						
+					
+						
+						
+						
+					
+						
+						
+						
+					
+						
+						
+						
+					
+						
+						
+						
+					
+						
+						
+						
+					
+						
+						
+						
+					
+				</article>
+			</div>
+
+			<footer class="site-footer">
+	<p>
+		<small>Generated at  2019-08-18 15:57:40 -0500</small>.
+	</p>
+	<p>
+		<small>
+			Page written by (unknown).
+			Site design by <a href="http://ben.stolovitz.com">Ben Stolovitz</a>.
+		</small>
+	</p>
+</footer>
+
+	</div>
+	<script type="text/javascript" src="/cse131/_site/js/highlight.pack.js"></script>
+</body>
+</html>

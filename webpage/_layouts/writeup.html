@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+
+{% include head.html %}
+
+<body>
+	<div class="wrapper">
+			<div class="container">
+
+				<article class="site-content">
+					<h1>{{ page.type | capitalize}} {{ page.week }}: {{ page.title }}</h1>
+
+
+
+					{{ content }}
+				</article>
+			</div>
+
+	</div>
+	<script type="text/javascript" src="{{ "/js/highlight.pack.js" | prepend: site.baseurl }}"></script>
+</body>
+</html>
