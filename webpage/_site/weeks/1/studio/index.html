@@ -116,20 +116,18 @@ out by others.  You must be able to explain anything that you have done.</li>
 
 <p>#Procedure</p>
 
+<p>To access the repository for this studio, you and your team members should click here (will become active when studio is live). One of you will need to create the team and the other people in your team will need to locate and join the team.</p>
+
 <ul>
   <li>You will complete a series of simple Java programs, and run each program
 to ensure it performs its task correctly.</li>
   <li>The files for this program are in the <code class="highlighter-rouge">studio1</code> package of the repository you loaded.</li>
   <li>
     <p>To run a program, right- (control-)
-click on the file's name, choose <code class="highlighter-rouge">Run As -&gt; Java Application</code>.  The program will then
+click on the file's name, choose <code class="highlighter-rouge">Run ...main()</code>.  The program will then
 launch and prompt you for the inputs it needs. Try this now on the <code class="highlighter-rouge">Hello</code> class.  When it asks you how you are feeling, enter whatever comes to mind.</p>
 
-    <p>The tools we use are replete with buttons and menus to make programming
-  easier.   One such button near the top of your eclipse window is a green
-  circle containing a white triangle: <img src="../../../studios/gbutton.png" alt="icon" title="playback icon" /></p>
-
-    <p>Clicking on this button will run the program again. Try running the program using the button.  Isn't that more fun?</p>
+    <p>Once you have run a program, you can run that same program again by clicking the green arrow at the top of the IntelliJ window.</p>
   </li>
 </ul>
 
@@ -191,21 +189,19 @@ because the average of two integers is not necessarily an integer.</p>
 
 <ol>
   <li>Right- (control-) click on the <code class="highlighter-rouge">studio1</code> package, select
-<code class="highlighter-rouge">New -&gt; Class</code>.</li>
-  <li>Type the name <code class="highlighter-rouge">Average</code> and check the box that indicates
-you want to create <code class="highlighter-rouge">public static void main(String[] args)</code>:
- <img src="../../../studios/newclass.png" alt="Class create" title="New Class in Exlipse Example" /></li>
-  <li>Click <code class="highlighter-rouge">Finish</code> and your new class shows up in the editor window.</li>
+<code class="highlighter-rouge">New -&gt; Java Class</code>.</li>
+  <li>Type the name <code class="highlighter-rouge">Average</code> and create the class.</li>
+  <li>Add a <code class="highlighter-rouge">public static void main(String[] args)</code> method in your Average class. Refer back to some of the other files if you are confused on how to do this.</li>
   <li>
     <p>At the top of the <code class="highlighter-rouge">main</code> method, you need to insert the <code class="highlighter-rouge">ArgsProcessor</code> code to accept two integers: <code class="highlighter-rouge">n1</code> and <code class="highlighter-rouge">n2</code>.</p>
 
     <blockquote>
       <p>Refer to other studio code to see how this is done.
-It is likely that when you type in the code, eclipse will flag your code with an error, because it doesn't know (yet) about <code class="highlighter-rouge">ArgsProcessor</code>.</p>
+It is likely that when you type in the code, IntelliJ will flag your code with an error, because it doesn't know (yet) about <code class="highlighter-rouge">ArgsProcessor</code>.</p>
 
-      <p>You can get eclipse to solve its own problem by mousing over the error, and using the first suggestion that pops up, namely to include <code class="highlighter-rouge">ArgsProcessor</code> from
+      <p>You can get IntelliJ to solve its own problem by mousing over the error, and using the first suggestion that pops up, namely to include <code class="highlighter-rouge">ArgsProcessor</code> from
 the <code class="highlighter-rouge">cse131</code> package.
-Sometimes eclipse is silly and won't tell you about that fix until
+Sometimes IntelliJ is silly and won't tell you about that fix until
 you have saved your file.  So save it.</p>
 
       <p>Try to use meaningful messages to prompt for values.  The units for the values will be interpreted
