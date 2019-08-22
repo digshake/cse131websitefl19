@@ -6,13 +6,11 @@
 <body>
 	<div class="wrapper writeup">
 			<div class="container">
-				<nav class="site-nav">
-					<a href="../">&larr; Week {{ page.week }} Overview</a>
-				</nav>
+
 				<article class="site-content">
 					<h1>{{ page.type | capitalize}} for Module {{ page.week }}:</h1>
 
-					{% for ext in site.extensions limit:100 %}
+					{% for ext in site.extensions limit:20 %}
 						{% assign sweek = ext.week | downcase %}
 						{% assign pweek = page.week | downcase %}
 						{% if sweek == pweek %}

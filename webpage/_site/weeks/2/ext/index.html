@@ -7,7 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <title>2.5 | CSE131: Computer Science I</title>
-  <meta name="description" content="Authors:  Nathan Vogt  Elie SchrammMario, created in 1981 by Nintendo, is a classic video game starring the fictional Italian character Mario. In the assignm...">
+  <meta name="description" content="Authors:  Nathan Vogt  Elie Schramm  Dotun TaiwoMario, created in 1981 by Nintendo, is a classic video game starring the fictional Italian character Mario. I...">
 
   <link rel="stylesheet" href="/cse131/_site/css/main.css">
   <link rel="canonical" href="https://www.cse.wustl.edu/cse131/_site/weeks/2/ext/">
@@ -18,9 +18,7 @@
 <body>
 	<div class="wrapper writeup">
 			<div class="container">
-				<nav class="site-nav">
-					<a href="../">&larr; Week 2 Overview</a>
-				</nav>
+
 				<article class="site-content">
 					<h1>Extension for Module 2:</h1>
 
@@ -57,13 +55,13 @@
   <li>Logan Sorentino</li>
 </ul>
 
-<p>##Manipulating an Image Raster</p>
+<h2 id="manipulating-an-image-raster">Manipulating an Image Raster</h2>
 
 <p>In the <strong>imagetransforms</strong> package, modify the provided <strong>Transforms</strong> Java program
 to implement the methods as described below.
 Your methods will use iteration (either <strong>while</strong> loops or <strong>for</strong> loops) to operate on the pixels of a picture.</p>
 
-<p>###Notes</p>
+<h3 id="notes">Notes</h3>
 
 <ul>
   <li>
@@ -123,7 +121,7 @@ for a <strong>Picture p</strong> as follows:</p>
   </li>
 </ul>
 
-<p>##Instructions</p>
+<h2 id="instructions">Instructions</h2>
 
 <p>Each of the methods described below is found in the <strong>Transforms</strong> class.</p>
 
@@ -198,183 +196,11 @@ for the amount of red and green in each pixel, given the x and y position of tha
 						
 						
 						
-							<h2 id=2>Extension 2.2: One-Rep Max Weight Calculator (3 points)</h2>
-							<p>Authors:</p>
-
-<ul>
-  <li>Devin Goodkin</li>
-  <li><a href="http://www.cs.wustl.edu/~cytron/">Ron Cytron</a></li>
-</ul>
-
-<p><em>Disclaimer</em>:</p>
-
-<blockquote>
-  <ul>
-    <li>
-      <p>The values computed in this assignment are based on
-published formulas, but you are advised to undertake this and all forms of
-exercise with the advice and consent of a physician.</p>
-    </li>
-    <li>
-      <p>In particular, performing
-a one-rep max movement unprepared or unsupervised can result in injury.</p>
-    </li>
-    <li>
-      <p>You are therefore especially cautioned against that form of training without 
-adequate supervision and coaching.</p>
-    </li>
-  </ul>
-
-  <p><strong>The authors of this extension and all personnel involved
-with this course are not licensed medical
-care providers; they represent that they have no exepertise in
-diagnosing, examining, or treating medical conditions of any kind,
-nor in determining the effects of any specific exercise.</strong></p>
-
-  <p>The data computed by this exercise are for informational and instructional
-purposes only.</p>
-</blockquote>
-
-<p>##Overview</p>
-
-<p>In weight training, the volume of work completed in
-one exercise (often called a <em>set</em>) is typically specified as a given weight that
-is moved a specified number of times.  These are respectively
-called the <em>weight</em> and <em>reps</em> (abbreviates repetitions)
-of that set.</p>
-
-<p>In this extension, you will create a one-rep max calculator. 
-This calculator hypothetically calculates a weight that a subject
-could move for one repetition, given that the same subject can successfully
-complete <em>r</em> reps (in the range of
-2 -&gt; 12) at a lighter weight.</p>
-
-<blockquote>
-  <ul>
-    <li>
-      <p>Beyond 12 reps,
-the formula we use is not considered  accurate.</p>
-    </li>
-    <li>
-      <p>The stated value for <em>r</em> is generally considered to be 
-the number of times the weight
-can be moved before <em>failure</em>:  the subject can complete <em>r</em> reps
-at the stated weight, but no more.</p>
-    </li>
-  </ul>
-</blockquote>
-
-<p>While a person may never attempt that one-rep max movement, the one-rep 
-max weight is canonical, in that it can then be used to compute
-lighter weights that should be feasible for the subject at a desired number
-of reps.</p>
-
-<p>Your solution will compute and print:</p>
-
-<ul>
-  <li>The one-rep max weight based on a formula described below.</li>
-  <li>The weight that should be feasible for a stated number of reps.</li>
-  <li>Percentages of the one-rep max weight from 95% to 50% in decrements of 5%.</li>
-</ul>
-
-<p>##Example</p>
-
-<p>Consider a subject who can successfully
-<a href="https://en.wikipedia.org/wiki/Bench_press">bench</a>
-225 pounds 10 times before failure.</p>
-
-<ul>
-  <li>What is this subjects current one-rep max bench weight?</li>
-  <li>How much weight should that subject be able to bench to get 5 reps before failure?</li>
-  <li>What percentage of this subject's max bench is the weight that can
-be benched 5 times?</li>
-</ul>
-
-<p><strong>Input</strong></p>
-
-<ul>
-  <li>Successful weight:  225 pounds</li>
-  <li>Successful reps: 10</li>
-  <li>Desired reps:  5</li>
-</ul>
-
-<p><strong>Output</strong></p>
-
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>One-rep max: 300
-Weight for 5 reps: 255
-95% 1 RM: 285
-90% 1 RM: 270
-85% 1 RM: 255
-80% 1 RM: 240
-75% 1 RM: 225
-70% 1 RM: 210
-65% 1 RM: 195
-60% 1 RM: 180
-55% 1 RM: 165
-50% 1 RM: 150
-</code></pre></div></div>
-
-<p>##Procedure</p>
-
-<ul>
-  <li>
-    <p>First take a look at 
-<a href="http://www.exrx.net/Calculators/OneRepMax.html">this one-rep max</a>
-caculator.</p>
-  </li>
-  <li>
-    <p>If you try it for some sample values, you will see that it
-produces results that may not work in an actual gym, because the smallest plate
-one can find in most gyms is 2.5 pounds.</p>
-  </li>
-  <li>
-    <p>Our calculator takes in a third input, which is how many reps the person 
-wants to perform, 
-and calculates a weight to be performed at that number of reps.</p>
-  </li>
-  <li>
-    <p>Our 
-<a href="https://en.wikipedia.org/wiki/One-repetition_maximum">one-rep max</a>
-calculations will be based on the 
-<a href="https://en.wikipedia.org/wiki/One-repetition_maximum#Epley_Formula">Epley Formula</a>,
-so study that material sufficiently well to complete this extension.</p>
-  </li>
-  <li>
-    <p>Create a <strong>OneRepMax</strong> class in the <strong>onerepmax</strong> package
-of the <strong>extensions</strong> folder.</p>
-  </li>
-  <li>
-    <p>Arrange for that program to prompt the user for the inputs needed for
-this computation.</p>
-  </li>
-  <li>
-    <p>Compute and print the results as shown in the sample ouptut above for
-the inputs provided in the run of your code.</p>
-  </li>
-  <li>
-    <p>You must:</p>
-
-    <ul>
-      <li>Check that the inputs provided are reasonable. Print a suitable message and
-  exit if any inputs are unreasonable.</li>
-      <li>Use iteration to produce the table of percentages of the one-rep max
-  weight.</li>
-      <li>Produce weight values that are rounded to the nearest <strong>5 pounds</strong>,
-  so that the least weight needed on a bar is 2.5 pounds on each side.</li>
-    </ul>
-  </li>
-</ul>
-
-
-							<h1>Submitting your work</h1>
-
-							<p>To submit your work, contact the instructor or a TA. They will walk you through the submission process. Be prepared to show them the work that you have done and answer their questions about it!</p>
-						
 					
 						
 						
 						
-							<h2 id=3>Extension 2.3: Rock, Paper, Scissors (5 points)</h2>
+							<h2 id=2>Extension 2.2: Rock, Paper, Scissors (5 points)</h2>
 							<p><strong>Authors</strong></p>
 
 <ul>
@@ -388,8 +214,8 @@ the other rotates faithfully from rock to paper to scissors. Your task is
 to simulate this game and to report the fraction of games won by
 each of the two players.</p>
 
-<p>##Procedure
-Find the <code class="highlighter-rouge">RockPaperScissors</code> package in the labs source folder.
+<h2 id="procedure">Procedure</h2>
+<p>Find the <code class="highlighter-rouge">RockPaperScissors</code> package in the labs source folder.
 Create a new class <code class="highlighter-rouge">RPS</code> there, and you are ready to begin your development.</p>
 
 <p>It is suggested that you develop code in small steps, so that you can proceed from confidence to confidence, and not have a big pile of untested code to debug at the end.</p>
@@ -514,100 +340,17 @@ and credit the win count properly.</p>
 						
 						
 						
-							<h2 id=4>Extension 2.4: Bank Interest Calculator (4 points)</h2>
-							<p>Authors</p>
-
-<ul>
-  <li>Brennan Morell</li>
-  <li>Jarett Gross</li>
-</ul>
-
-<p>##Background</p>
-
-<p>In this assignment, you have a balance in your bank account and you randomly either deposit or withdraw money from 
-your account every day for one month (30 days). At the end of the month, you receive interest on your balance.</p>
-
-<p>##Procedure</p>
-
-<ol>
-  <li>
-    <p>You start with $4000 in your bank account and earn 2% interest at the end of the month.</p>
-  </li>
-  <li>
-    <p>Each day, you always withdraw or deposit money. Half of the time you <strong>withdraw $100.00</strong> and the other 
-half of the time you <strong>deposit $200.50</strong>.</p>
-
-    <blockquote>
-      <p>How would you use random numbers to determine whether you withdraw or deposit money?</p>
-    </blockquote>
-  </li>
-  <li>
-    <p>After withdrawing or depositing money, calculate your new balance. Then print the following: 
-<strong>Day</strong>, <strong>Type</strong>, <strong>Amount</strong>, <strong>Balance</strong> in a cleanly formatted table.</p>
-
-    <blockquote>
-      <p>Since the cent is the lowest denomination in U.S. currency, round your withdrawals, deposits, and balance 
-to the nearest cent.</p>
-    </blockquote>
-  </li>
-  <li>
-    <p>Finally, after the 30th day, calculate and print the amount of interest you earned and your final balance.</p>
-  </li>
-</ol>
-
-<p>Your final output should look similar to this:</p>
-
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Day	Type		Amount		Balance
-1	Deposit 	$200.50		$4200.50
-2	Withdraw	$100.00		$4100.50
-3	Deposit 	$200.50		$4301.00
-4	Deposit 	$200.50		$4501.50
-5	Withdraw	$100.00		$4401.50
-6	Deposit 	$200.50		$4602.00
-7	Withdraw	$100.00		$4502.00
-8	Deposit 	$200.50		$4702.50
-9	Withdraw	$100.00		$4602.50
-10	Withdraw	$100.00		$4502.50
-11	Deposit 	$200.50		$4703.00
-12	Deposit 	$200.50		$4903.50
-13	Deposit 	$200.50		$5104.00
-14	Withdraw	$100.00		$5004.00
-15	Withdraw	$100.00		$4904.00
-16	Withdraw	$100.00		$4804.00
-17	Deposit 	$200.50		$5004.50
-18	Deposit 	$200.50		$5205.00
-19	Deposit 	$200.50		$5405.50
-20	Deposit 	$200.50		$5606.00
-21	Withdraw	$100.00		$5506.00
-22	Deposit 	$200.50		$5706.50
-23	Deposit 	$200.50		$5907.00
-24	Withdraw	$100.00		$5807.00
-25	Deposit 	$200.50		$6007.50
-26	Deposit 	$200.50		$6208.00
-27	Deposit 	$200.50		$6408.50
-28	Withdraw	$100.00		$6308.50
-29	Withdraw	$100.00		$6208.50
-30	Withdraw	$100.00		$6108.50
-
-Interest earned: 122.17
-Money after one month\'s interest: 6230.67
-</code></pre></div></div>
-
-
-							<h1>Submitting your work</h1>
-
-							<p>To submit your work, contact the instructor or a TA. They will walk you through the submission process. Be prepared to show them the work that you have done and answer their questions about it!</p>
-						
 					
 						
 						
 						
-							<h2 id=5>Extension 2.5: Mario (4 points)</h2>
+							<h2 id=3>Extension 2.3: Mario (4 points)</h2>
 							<p>Authors:</p>
 
 <ul>
   <li>Nathan Vogt</li>
   <li>Elie Schramm</li>
+  <li>Dotun Taiwo</li>
 </ul>
 
 <p><a href="https://en.wikipedia.org/wiki/Mario_(franchise)">Mario</a>, created in 1981 by Nintendo, is a classic video game 
@@ -616,210 +359,80 @@ loops printing hashtags will be used to build the block mountains as seen in the
 
 <p style="text-align: center"><img src="../../../extensions/Super-Mario-Bros.-3.jpg" alt="" /></p>
 
-<p>Create Mountain Blocks in Mario using loops. Test all your loops on mountains of various sizes.</p>
+<p>The code for this assignment will be unit-tested, which means that we have an automatic way to determine if your code is producing the correct output. For the unit testing to work, you must follow the instructions below carefully.</p>
 
-<p>Hint: You many want to use underscores for spacing the blocks correctly before substituting spaces.</p>
+<ul>
+  <li>Find and open the Java class Mario in the mario package of your extensions folder.</li>
+  <li>
+    <p>Your program must frist prompt the user for two integer inputs using ArgsProcessor. These must be requested in the following order:</p>
 
-<p>This can be accomplished by printing each line or character separately, or by 
-adding all the spaces and hashtages to one large String. Using <strong>“\n”</strong> in a String causes a line break.
-So, for example:</p>
+    <p><b>size</b></p>
 
-<p><code class="highlighter-rouge">String s = "one" + "\n" + "two";</code></p>
+    <p>What is the size of the mountain? In the picture above, the mountain has size 5 because there are 5 levels of squares, and the widest part of the mountain, at its bottom, is also 5 squares. A mountain will always be a square structure containing size×size elements, some of which are hashtags (#) and some of which are blanks.</p>
 
-<p>prints out to:</p>
+    <p><b>pattern</b></p>
 
-<p><code class="highlighter-rouge">one</code></p>
-
-<p><code class="highlighter-rouge">two</code></p>
-
-<ol>
-  <li>Create a mountain that ascends to the right, as shown in the example for a size 5 mountain.</li>
-</ol>
-
-<pre>
-	    #
-	   ##
-	  ###
-	 ####
-	#####
-</pre>
+    <p>We will use an integer in the range 1 to 4 to indicate which pattern your program should produce. In the picture above, pattern 1 is shown. The other patterns are explained below</p>
+  </li>
+  <li>Your program then prints the mountain of the specified size and pattern.</li>
+</ul>
 
 <ol>
-  <li>Create a mountain that descends to the right, as shown.</li>
+  <li>
+    <p>Mario runs from left to right. Create a mountain that he would have to climb, as shown in the example for a size 5 mountain.</p>
+
+    <pre>
+         #
+        ##
+       ###
+      ####
+     #####
+ </pre>
+  </li>
+  <li>
+    <p>Create a mountain that he would descend, as shown below for a size 3 mountain.</p>
+
+    <pre>     
+     #  
+     ## 
+     ###
+ </pre>
+  </li>
+  <li>
+    <p>Make a mountain that resembles pattern 1, but flipped upside-down. Below is shown a size 7 mountain for this pattern.</p>
+
+    <pre>
+   #######
+    ######
+     #####
+      ####
+       ###
+        ##
+         #
+ </pre>
+  </li>
+  <li>
+    <p>Make a mountain that resembles pattern 2, but flipped upside down. Below is shown a size 4 mountain for this pattern.</p>
+
+    <pre>
+     #### 
+     ###  
+     ##   
+     #  
+ </pre>
+  </li>
 </ol>
 
-<pre>
-	#    
-	##   
-	###  
-	#### 
-	#####
-</pre>
+<p>Try running your Mario class and test yourself using various sizes (say, 1 to 10) and patterns (always an integer from 1 to 4).</p>
 
-<ol>
-  <li>Make a mountain that resembles the original mountain flipped upside down. Ex:</li>
-</ol>
+<p>Run the unit test by right (control) clicking on MarioTest and running it as you would any other program.</p>
 
-<pre>
-    #####
-     ####
-      ###
-       ##
-    	#
-</pre>
-
-<ol>
-  <li>Make a mountain that resembles the second one upside down. Ex:</li>
-</ol>
-
-<pre>
-    #####
-    #### 
-    ###  
-    ##   
-    #  
-</pre>
+<p>If you see a green bar, then the test ran correctly. If it’s red, you have a problem with your solution. The output shown in the console window should help you determine what is wrong.</p>
 
 
 							<h1>Submitting your work</h1>
 
 							<p>To submit your work, contact the instructor or a TA. They will walk you through the submission process. Be prepared to show them the work that you have done and answer their questions about it!</p>
-						
-					
-						
-						
-						
-					
-						
-						
-						
-					
-						
-						
-						
-					
-						
-						
-						
-					
-						
-						
-						
-					
-						
-						
-						
-					
-						
-						
-						
-					
-						
-						
-						
-					
-						
-						
-						
-					
-						
-						
-						
-					
-						
-						
-						
-					
-						
-						
-						
-					
-						
-						
-						
-					
-						
-						
-						
-					
-						
-						
-						
-					
-						
-						
-						
-					
-						
-						
-						
-					
-						
-						
-						
-					
-						
-						
-						
-					
-						
-						
-						
-					
-						
-						
-						
-					
-						
-						
-						
-					
-						
-						
-						
-					
-						
-						
-						
-					
-						
-						
-						
-					
-						
-						
-						
-					
-						
-						
-						
-					
-						
-						
-						
-					
-						
-						
-						
-					
-						
-						
-						
-					
-						
-						
-						
-					
-						
-						
-						
-					
-						
-						
-						
-					
-						
-						
 						
 					
 						
@@ -867,7 +480,7 @@ So, for example:</p>
 
 			<footer class="site-footer">
 	<p>
-		<small>Generated at  2019-08-19 12:57:50 -0500</small>.
+		<small>Generated at  2019-08-22 16:42:41 -0500</small>.
 	</p>
 	<p>
 		<small>

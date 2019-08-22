@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>1.5 | CSE131: Computer Science I</title>
+  <meta name="description" content="Authors:  Nathan Vogt  Elie SchrammIn this assignment,youcompare the monthly cost of renting vs. owning a home in the St. Louis area The following tasks will...">
+
+  <link rel="stylesheet" href="/cse131/_site/css/main.css">
+  <link rel="canonical" href="https://www.cse.wustl.edu/cse131/_site/weeks/991/ext/">
+  <link rel="alternate" type="application/rss+xml" title="CSE131: Computer Science I" href="https://www.cse.wustl.edu/cse131/_site/feed.xml">
+</head>
+
+
+<body>
+	<div class="wrapper writeup">
+			<div class="container">
+
+				<article class="site-content">
+					<h1>Extension for Module 991:</h1>
+
+					
+						
+						
+						
+					
+						
+						
+						
+					
+						
+						
+						
+					
+						
+						
+						
+							<h2 id=99>Extension 991.99: Expected Value (3 points)</h2>
+							<p>Authors:</p>
+
+<ul>
+  <li>Alan Waldman</li>
+</ul>
+
+<p>##Background
+How do you feel about money, risk, and job satisfaction?
+In this extension you will
+examine some simple yet powerful ideas from economics, and you will
+write code to compute how a person should behave based how he or she
+views risk, reward, and job satisfaction.</p>
+
+<p>The concepts we explore are as follows:</p>
+
+<p><strong>Utility</strong></p>
+
+<p><a href="http://en.wikipedia.org/wiki/Utility"> Utility</a> 
+is an economic term referring to the total satisfaction you
+derive or receive from some action or activity.</p>
+
+<p>Given the choice of two activities and absent any other
+concerns, a rational person would chose the activity
+that yielded the higher utility.</p>
+
+<p><strong>Expected Value</strong></p>
+
+<p>If there is uncertainty about outcomes, then the expected
+value of a given outcome is the product of its probability of occurring and
+the value of achieving that outcome.</p>
+
+<p>Let's consider the following two examples:</p>
+
+<ol>
+  <li>
+    <p>You are given $1.  The probability of this event is 1, and your
+ value for achieving the outcome is $1, so your expected value is $1.</p>
+  </li>
+  <li>
+    <p>You enter into a (no-cost) lottery with 9,999 other people for a chance to win
+ $10,000.  If the probability of the winner is uniformly distributed among those
+ who enter the lottery, you win $10,000 with probabilty 0.0001 and you lose (win $0)
+ with probability 0.9999.  The expected value computation for this
+ scenario is as follows:</p>
+
+    <p>(.0001 * $10,000) + (.9999 * $0)</p>
+
+    <p>Your expected value here is therefore also $1.</p>
+  </li>
+</ol>
+
+<ul>
+  <li>
+    <p>Based only on expected value, a person confronted with a choice on the
+  above two scenarios would have no reason to pick one over the other, since
+  the expected value is the same.</p>
+  </li>
+  <li>
+    <p>Now suppose the money given to you for certain in the first scenario is doubled to $2.  A rational person would surely pick $2 over the lottery entry, because $2 is twice the expected value of the lottery outcome.</p>
+  </li>
+</ul>
+
+<p>However, we know there are people who would choose entering the lottery over
+receiving a sure $1 or $2.</p>
+
+<p>In the <a href="http://usnews.nbcnews.com/_news/2012/11/28/15510840-11-things-more-likely-to-happen-than-winning-the-powerball-jackpot?lite">Powerball Lottery</a>,<br />
+your chances of winning are
+1 in 175,223,510.  So a rational person shouldn't buy a ticket if the jackpot
+is under $175M.
+But allegedly rational people do buy tickets for jackpots under that
+threshold.</p>
+
+<p>How can we account for this behavior?<br />
+Read on.</p>
+
+<p><strong>Expected Utility Theory</strong></p>
+
+<p>The above analysis assumes a linear value for wealth. <br />
+We can account
+for those who favor or avoid risk using
+<a href="http://en.wikipedia.org/wiki/Expected_utility_hypothesis">Expected Utility Theory</a>.
+This theory admits that rational people may have nonlinear views of
+wealth.  This means that you may like $1,000 more (or less) than 1,000 times as much
+as you like $1.
+Let's look at three examples:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Expected utility function</th>
+      <th>Notes</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>u(d) = d</strong></td>
+      <td>Linear value of wealth.  The above analysis applies to such a person.</td>
+    </tr>
+    <tr>
+      <td><strong>u(d) = d<sup>2</sup></strong></td>
+      <td>This person values $10,000 the same way a linear person would value $100,000,000. &lt;p&gt; In the scenario given above, this explains why a person would enter the lottery.  The person’s perceived value of winning $10,000 is $10,000<sup>2</sup>=$100,000,000, which at probability 0.0001 yields an expected utility of $10,000:  far greater than the $1 given for certain.  &lt;p&gt; An alternate view is that this person has a linear view of wealth  (<b>u(d)=d</b>) but an unrealistic view of the probability of winning.  For example, if this person holds the false belief that the probability of winning is 0.1 instead of .0001, then the expected value jumps from $1 to $1,000 using a linear function for expected utility. Because economists try to model human behavior assuming rationality, they translate this inflated view of luck into a nonlinear view of wealth. &lt;p&gt; Thus, the function <b>u(d)=d<sup>2</sup></b> captures a form of <i>risk-loving</i> behavior.   More generally, when viewed from below, any <i>convex</i> function, of which u(d)=d<sup>2</sup> is an example, models risk-loving behavior. &lt;p&gt; Such a person is either more certain of winning than probabilities would indicate, or alternatively has a convex expected utility function.</td>
+    </tr>
+    <tr>
+      <td><strong>u(d) = sqrt(d)</strong></td>
+      <td>On the other hand, this <i>concave</i> function captures <i>risk-averse</i> behavior.  In the lottery scenario, a win of $10,000 would feel like a win of only $100 to this person.  With a .0001 probability of winning, the expected utility under this function is only 1 cent.  Such a person would not enter the lottery even if the no-risk payoff were reduced from $1 to 2 cents.</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>##Problem
+Suppose you are trying to decide between one of the following
+two careers:</p>
+
+<p><strong>Gamer</strong></p>
+
+<p>You join a start-up company, which is exciting and
+could have high pay-off, but this venture might
+fail.
+Let's say
+you succeed with probability <i>p</i>, and if so you will 
+earn $190,000.  But if you fail (with probability <i>1-p</i>), you earn only $5000.</p>
+
+<p><strong>Programmer</strong></p>
+
+<p>This job has no risk, and offers a salary in the range
+of $110,000 to $160,000.  Your salary will be determined by a random
+choice of a value drawn uniformly from that range.</p>
+
+<p>##Procedure</p>
+
+<p>Do this work by createing a class in the <kbd>expectedvalue</kbd>
+package of the <kbd>extensions</kbd> folder.</p>
+
+<p>Let's begin by assuming you have linear value for money.  Based on
+the above description, write a program that does the following:</p>
+
+<ol>
+  <li>
+    <p>Prompts the user for a value for <i>p</i>, which is the probability of
+ the game start-up venture succeeding.  The text of your prompt should
+ be a meaningful message.</p>
+
+    <p>Think about the type of <i>p</i>.  Also what is a good variable name
+ for this concept?</p>
+  </li>
+  <li>
+    <p>Given <i>p</i>, compute the expected value of the gamer-job outcome.</p>
+
+    <p>Use the equation for the Expected Value that is shown in the background section. Again, think about the type you need to represent the computed value,
+ and think of a good name for this concept.</p>
+  </li>
+  <li>
+    <p>Now pick a salary for the programming job by choosing a random value
+ between $110,000 and $160,000.</p>
+  </li>
+  <li>
+    <p>Print both outcomes and a message that indicates whether you should
+ accept the gamer job over the programmer job depending on which one will give you the most money, according to your calculation.
+ Such output might resemble:</p>
+
+    <pre>
+   Gamer: $97,500
+   Programmer: $115,000
+   You should be a gamer and not a programmer?  false
+ </pre>
+
+    <p>Run your program for multiple values of <i>p</i> to be sure that your output
+ makes sense.</p>
+  </li>
+</ol>
+
+<p>Now lets assume that you DON'T have a linear value of wealth. Lets assume that your utility for wealth given your job differs as follows:</p>
+
+<ul>
+  <li>
+    <p>EU (Gamer):  3*sqrt(wealth)</p>
+  </li>
+  <li>
+    <p>EU (Programmer):  2*sqrt(wealth)</p>
+  </li>
+</ul>
+
+<p>Now:</p>
+
+<ol>
+  <li>
+    <p>Take the values for the wealth for the two jobs that you got before, and plug them into the above utility functions</p>
+  </li>
+  <li>
+    <p>Print both outcomes and a message that indicates whether you should
+ accept the gamer job over the programmer job depending on which one will give you the most utility, according to your calculation.</p>
+  </li>
+</ol>
+
+							<h1>Submitting your work</h1>
+
+							<p>To submit your work, contact the instructor or a TA. They will walk you through the submission process. Be prepared to show them the work that you have done and answer their questions about it!</p>
+						
+					
+						
+						
+						
+							<h2 id=99>Extension 991.99: Home Owning (4 points)</h2>
+							<p>Authors:</p>
+
+<ul>
+  <li>Nathan Vogt</li>
+  <li>Elie Schramm</li>
+</ul>
+
+<p>In this assignment,
+you
+compare the monthly cost of renting vs. owning a home in the St. Louis area 
+The following tasks will test your knowledge of</p>
+
+<ul>
+  <li>Creating a class</li>
+  <li>Getting input from user</li>
+  <li>Printing to the console</li>
+  <li>Understanding primitive types</li>
+  <li>Utilizing <kbd>Math.round</kbd></li>
+</ul>
+
+<p>Let’s suppose that in deciding where you want to live, you have the
+following choices:</p>
+
+<p><strong>Renting</strong></p>
+
+<p>When you rent, you pay a fixed amount of money each month,
+and you may continue this arrangement indefinitely.</p>
+
+<p><strong>Owning</strong></p>
+
+<p>The price of a home is typically larger than one can afford
+up-front.   Thus, most home owners acquire a loan from a bank or
+some other funding source.  To pay off the loan, let’s assume you
+make a fixed payment each month.  Some of that payment is applied to
+the amount of money you borrowed, called the <em>principal</em>.
+The rest of the payment is applied to the <em>interest</em> that you must
+pay to the lending agency for the privilege of borrowing the money.</p>
+
+<p>In evaluating whether to rent or to own, one consideration is the 
+amount of money you pay without return each week or year.  Rent brings
+no return whatsoever, as the owner of the apartment simply keeps all rent.</p>
+
+<p>On the other hand, the money you pay via a mortage partially
+pays for the house, which brings you value, but partially goes to the
+lender (the interest portion).</p>
+
+<p>Thus, one way to compare which is better for you is to consider 
+rent vs. interest paid per week or year.</p>
+
+<ol>
+  <li>
+    <p>In the <kbd> extensions</kbd> folder of your repository, find
+ the <kbd>homeowning</kbd> package and open the <kbd>HomeOwning</kbd> class 
+ file.</p>
+  </li>
+  <li>
+    <p>For each of the following items, think about the right data type to
+ represent that item, and place code in your <kbd>HomeOwning</kbd> class
+ to prompt for the corresponding inputs:</p>
+
+    <ul>
+      <li>the name of the apartment complex</li>
+      <li>the zip code of the apartment</li>
+    </ul>
+
+    <p>In the United States, 5-digit zip codes are integers.  But what is
+ the right data type for a zip code?  In computer science, we rely more
+ on how an item is <em>used</em> rather than how it appears.  Integers,
+ for example, are most of often the subject of simple math operations.</p>
+
+    <p>Will the zip code be involved with any calculations?</p>
+
+    <p>If not, then what data type is a better choice for a zip code?</p>
+  </li>
+  <li>
+    <p>the monthly rent of the apartment.  Assume this can be specified
+ as an integer (e.g., 600 dollars).</p>
+  </li>
+  <li>
+    <p>the daily interest payment for your mortgage on the house.  This is not necessarily an integral number of dollars (may involve cents).</p>
+
+    <p>However, any price in US currency can be represented as an integer if
+ we consider the price in <em>cents</em>.</p>
+    <p>
+ In working with money,
+ computer scientists typically avoid <kbd>double</kbd> data types, because
+ they sometimes approximate an intended value. Thus, 
+ $123.45 can be represented as the integer 12345 in cents
+ per month.
+
+</p>
+  </li>
+</ol>
+<p>After prompting for the above inputs, your task is to provide the following report:</p>
+
+<ul>
+  <li>
+    <p>The name of the property and its zip code</p>
+  </li>
+  <li>
+    <p>The rent for a year, shown in dollars (no cents)</p>
+  </li>
+  <li>
+    <p>The rent for a week, rounded to the nearest cent</p>
+  </li>
+  <li>
+    <p>The interest payments for a year, shown in dollars and cents</p>
+  </li>
+  <li>
+    <p>The interest payments for a week, rounded to the nearest cent</p>
+  </li>
+  <li>
+    <p>Your decision, based on cost, of whether to rent or own, based
+  on which is cheaper</p>
+  </li>
+</ul>
+
+<p>##Sample input and output
+Although you must prompt for inputs, below is an example of data
+you might see and the output you would produce based on
+those inputs.</p>
+
+<p><strong>Sample Inputs</strong></p>
+
+<table>
+<tr> <td><kbd>Name</kbd>       </td><td> <kbd>Vanguard Crossing</kbd></td> </tr>
+<tr> <td><kbd>Zip Code</kbd>   </td><td> <kbd>63104</kbd></td> </tr>
+<tr> <td> <kbd>Monthly Rent</kbd>      </td><td> <kbd>600</kbd></td> </tr>
+<tr> <td> <kbd>Daily Interest</kbd>  </td><td> <kbd>31.99</kbd></td> </tr>
+</table>
+
+<p>The following output would be produced:</p>
+
+<pre>
+Vanguard Crossing is located in the Zip Code 63104
+Rent per year: 7200
+Rent per week: 138.46
+
+Interest paid per year: 11676.35
+Interest paid per week: 223.93
+
+I should rent
+</pre>
+
+<p>##Should you move?
+Your apartment manager decides to increase your rent to $980 per month.<br />
+Assuming that ownership is still an option for you with the same mortgage 
+interest
+payments, should you continue to rent or should you own?</p>
+
+							<h1>Submitting your work</h1>
+
+							<p>To submit your work, contact the instructor or a TA. They will walk you through the submission process. Be prepared to show them the work that you have done and answer their questions about it!</p>
+						
+					
+						
+						
+						
+					
+						
+						
+						
+					
+						
+						
+						
+					
+						
+						
+						
+					
+						
+						
+						
+					
+						
+						
+						
+					
+						
+						
+						
+					
+						
+						
+						
+					
+						
+						
+						
+					
+						
+						
+						
+					
+						
+						
+						
+					
+						
+						
+						
+					
+						
+						
+						
+					
+						
+						
+						
+					
+						
+						
+						
+					
+				</article>
+			</div>
+
+			<footer class="site-footer">
+	<p>
+		<small>Generated at  2019-08-22 16:42:41 -0500</small>.
+	</p>
+	<p>
+		<small>
+			Page written by (unknown).
+			Site design by <a href="http://ben.stolovitz.com">Ben Stolovitz</a>.
+		</small>
+	</p>
+</footer>
+
+	</div>
+	<script type="text/javascript" src="/cse131/_site/js/highlight.pack.js"></script>
+</body>
+</html>

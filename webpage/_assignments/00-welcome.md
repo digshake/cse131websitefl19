@@ -194,6 +194,10 @@ git.
 You now know the basic steps to create projects, as well as open, edit, compile, and run Java programs in IntelliJ.  You should also have a basic understanding of sequential execution and how to call methods on objects.
 *Please ask if you have questions about any of this.*
 
+Now that you have some practice setting up a repository, you should take a minute to load up the exercises repository. These exercises are part of the prep work that you will be asked to compelte every week before coming to studio.
+
+Follow <a href="https://classroom.github.com/a/l0Z_PUrA">this link</a> to access the exercises repository. Follow the above steps to load this repository into IntelliJ. To close your Lab 0 project and get back to IntelliJ's welcome screen, go to `File -> Close Project`.
+
 ## Course Information
 
 Take some time to peruse the web site. Are you clear about
