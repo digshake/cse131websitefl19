@@ -7,20 +7,20 @@ due: 2018-05-29
 
 # Installing the Necessary Tools
 
-We will be using a language called Java to create and run code on our computers. Before you can execute Java code, you need to install the <a href="http://www.oracle.com/technetwork/java/javase/downloads/index.html">Java Development Kit (JDK)</a>. The JDK includes a whole bunch of Java tools that are used to assist in the creation and execution of Java programs. Visit the link above to download the JDK and install it on your computer.
+We will be using a language called Java to create and run code on our computers. Before you can execute Java code, you need to install the <a href="http://www.oracle.com/technetwork/java/javase/downloads/index.html" target="_blank">Java Development Kit (JDK)</a>. The JDK includes a whole bunch of Java tools that are used to assist in the creation and execution of Java programs. Visit the link above to download the JDK and install it on your computer.
 
-Professional software developers use an <a href="http://en.wikipedia.org/wiki/Integrated_development_environment">Integrated Development Environment (IDE)</a> that includes a text editor (for
-creating source code), a <a href="http://en.wikipedia.org/wiki/Compiler">compiler</a> (for translating source code into
-executable code), and a <a href="http://en.wikipedia.org/wiki/Debugger">debugger</a> (for finding errors).  In this
+Professional software developers use an <a href="http://en.wikipedia.org/wiki/Integrated_development_environment" target="_blank">Integrated Development Environment (IDE)</a> that includes a text editor (for
+creating source code), a <a href="http://en.wikipedia.org/wiki/Compiler" target="_blank">compiler</a> (for translating source code into
+executable code), and a <a href="http://en.wikipedia.org/wiki/Debugger" target="_blank">debugger</a> (for finding errors).  In this
 course,
-we\'ll be using <a href="http://www.jetbrains.com/idea/">IntelliJ</a>, a popular IDE that supports programming in
+we\'ll be using <a href="http://www.jetbrains.com/idea/" target="_blank">IntelliJ</a>, a popular IDE that supports programming in
 Java.  
 
 Visit the link above to download and install IntelliJ on your computer. You should download the <b>community</b> version, which is free.
 
 # Version Control
 
-In CSE131 this semester, we will be using <a href="http://git-scm.com/">Git</a> as our version control system.
+In CSE131 this semester, we will be using <a href="http://git-scm.com/" target="_blank">Git</a> as our version control system.
 
 Version control systems (VCS) are great for when you want to record who did what for which file or set of files, and it is especially useful when multiple people collaborate on projects, as you will be in this course.
 
@@ -31,10 +31,10 @@ Before working on any project, you must *check out your repository*.
 ## Getting Started with Java in IntelliJ with Git 
 
 Professional software developers use a
-<a href="http://en.wikipedia.org/wiki/Software_versioning">versioning repository</a> to
+<a href="http://en.wikipedia.org/wiki/Software_versioning" target="_blank">versioning repository</a> to
 store their code, so that they can share their code easily and keep track
 of the changes they make.  We will be using the
-<a href="http://git-scm.com/">git</a> revision control
+<a href="http://git-scm.com/" target="_blank">git</a> revision control
 system.  It will allow you to submit your code for grading and to
 share it with TAs who can help you with problems you might encounter.
 
@@ -44,9 +44,9 @@ git.
 
 1. Create your repository.
 
-	You will create a separate repository for each assignment, studio, etc. that you complete in this course. Your repositories will be stored on <a href="http://github.com">GitHub</a> a popular website for storing code repositories. You should visit this site and create an account, using your @wustl.edu email address.
+	You will create a separate repository for each assignment, studio, etc. that you complete in this course. Your repositories will be stored on <a href="http://github.com" target="_blank">GitHub</a> a popular website for storing code repositories. You should visit this site and create an account, using your @wustl.edu email address.
 	
-	Once you have created an account, you can create a repository for this assignment. To do so, follow <a href="https://classroom.github.com/a/HyYI3p_8">this link</a>. You should see a screen like the following:
+	Once you have created an account, you can create a repository for this assignment. To do so, follow <a href="https://classroom.github.com/a/HyYI3p_8" target="_blank">this link</a>. You should see a screen like the following:
 
 	![github roster](../../../assignments/Classroom_Roster_Selection.png)
 
@@ -202,7 +202,7 @@ You now know the basic steps to create projects, as well as open, edit, compile,
 
 Now that you have some practice setting up a repository, you should take a minute to load up the exercises repository. These exercises are part of the prep work that you will be asked to compelte every week before coming to studio.
 
-Follow <a href="https://classroom.github.com/a/l0Z_PUrA">this link</a> to access the exercises repository. Follow the above steps to load this repository into IntelliJ. To close your Lab 0 project and get back to IntelliJ's welcome screen, go to `File -> Close Project`.
+Follow <a href="https://classroom.github.com/a/l0Z_PUrA" target="_blank">this link</a> to access the exercises repository. Follow the above steps to load this repository into IntelliJ. To close your Lab 0 project and get back to IntelliJ's welcome screen, go to `File -> Close Project`.
 
 ## Course Information
 
