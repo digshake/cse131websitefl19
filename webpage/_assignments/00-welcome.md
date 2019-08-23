@@ -7,20 +7,20 @@ due: 2018-05-29
 
 # Installing the Necessary Tools
 
-We will be using a language called Java to create and run code on our computers. Before you can execute Java code, you need to install the <a href="https://www.oracle.com/technetwork/java/javase/downloads/index.html">Java Development Kit (JDK)</a>. The JDK includes a whole bunch of Java tools that are used to assist in the creation and execution of Java programs. Visit the link above to download the JDK and install it on your computer.
+We will be using a language called Java to create and run code on our computers. Before you can execute Java code, you need to install the <a href="http://www.oracle.com/technetwork/java/javase/downloads/index.html">Java Development Kit (JDK)</a>. The JDK includes a whole bunch of Java tools that are used to assist in the creation and execution of Java programs. Visit the link above to download the JDK and install it on your computer.
 
 Professional software developers use an <a href="http://en.wikipedia.org/wiki/Integrated_development_environment">Integrated Development Environment (IDE)</a> that includes a text editor (for
 creating source code), a <a href="http://en.wikipedia.org/wiki/Compiler">compiler</a> (for translating source code into
 executable code), and a <a href="http://en.wikipedia.org/wiki/Debugger">debugger</a> (for finding errors).  In this
 course,
-we\'ll be using <a href="https://www.jetbrains.com/idea/">IntelliJ</a>, a popular IDE that supports programming in
+we\'ll be using <a href="http://www.jetbrains.com/idea/">IntelliJ</a>, a popular IDE that supports programming in
 Java.  
 
 Visit the link above to download and install IntelliJ on your computer. You should download the <b>community</b> version, which is free.
 
 # Version Control
 
-In CSE131 this semester, we will be using <a href="https://git-scm.com/" target="new">Git</a> as our version control system.
+In CSE131 this semester, we will be using <a href="http://git-scm.com/">Git</a> as our version control system.
 
 Version control systems (VCS) are great for when you want to record who did what for which file or set of files, and it is especially useful when multiple people collaborate on projects, as you will be in this course.
 
@@ -34,7 +34,7 @@ Professional software developers use a
 <a href="http://en.wikipedia.org/wiki/Software_versioning">versioning repository</a> to
 store their code, so that they can share their code easily and keep track
 of the changes they make.  We will be using the
-<a href="https://git-scm.com/">git</a> revision control
+<a href="http://git-scm.com/">git</a> revision control
 system.  It will allow you to submit your code for grading and to
 share it with TAs who can help you with problems you might encounter.
 
@@ -44,10 +44,16 @@ git.
 
 1. Create your repository.
 
-	You will create a separate repository for each assignment, studio, etc. that you complete in this course. Your repositories will be stored on <a href="github.com">GitHub</a> a popular website for storing code repositories. You should visit this site and create an account, using your @wustl.edu email address.
+	You will create a separate repository for each assignment, studio, etc. that you complete in this course. Your repositories will be stored on <a href="http://github.com">GitHub</a> a popular website for storing code repositories. You should visit this site and create an account, using your @wustl.edu email address.
 	
 	Once you have created an account, you can create a repository for this assignment. To do so, follow <a href="https://classroom.github.com/a/HyYI3p_8">this link</a>. You should see a screen like the following:
-	
+
+	![github roster](../../../assignments/Classroom_Roster_Selection.png)
+
+	Select your WUSTL Key from the list (which allows us to associate your GitHub ID with your WUSTL student records).  The remaining steps of the process will be done on each assignment, but you only need to select your WUSTL key once.
+
+	Next you should see a screen that allows you to accept the assignment:
+
 	![github](../../../assignments/0.png)
 	
 	Click the "Accept this assignment" button. You will see GitHub doing some work for you, and then a screen that looks like this:
