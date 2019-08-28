@@ -1,0 +1,533 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Module 8 | CSE131: Computer Science I</title>
+  <meta name="description" content="#Module OverviewModule Overview#Module IntroductionModule Introduction#Introduction to ListsIntroduction to Lists#Exercise: Examples of a list##Part 1: Intro...">
+
+  <link rel="stylesheet" href="/cse131/_site/css/main.css">
+  <link rel="canonical" href="https://www.cse.wustl.edu/cse131/_site/weeks/8/prep/">
+  <link rel="alternate" type="application/rss+xml" title="CSE131: Computer Science I" href="https://www.cse.wustl.edu/cse131/_site/feed.xml">
+</head>
+
+
+<body>
+	<div class="wrapper">
+			<div class="container">
+
+				<article class="site-content">
+					<h1>Prep 8: Module 8</h1>
+
+
+
+					
+<p>#Module Overview</p>
+
+<p><a href="https://wustl.box.com/s/2yzo23br302jp1tail4tsvw2lo6r2tcu">Module Overview</a></p>
+
+<p>#Module Introduction</p>
+
+<p><a href="https://wustl.box.com/s/vswr4i63s392jnryx6p8yrr013dxzijb">Module Introduction</a></p>
+
+<p>#Introduction to Lists</p>
+
+<p><a href="https://wustl.box.com/s/inl4xg4r0gmfv5d0e0j8s7539rzkz1h1">Introduction to Lists</a></p>
+
+<p>#Exercise: Examples of a list</p>
+
+<p>##Part 1: Introduction</p>
+
+<p><a href="https://wustl.box.com/s/06kfsgdccw6r5tcjo8y4yxd7nbvizycn">Examples of a list: Introduction</a></p>
+
+<p>##Part 2: The Exercise</p>
+
+<p>You do not write code in this exercise.  Instead, consider each numbered question below and write down some responses that come to mind. You are at this point quite new to lists, so take your time and try to think of the best responses you can.</p>
+
+<p>To record your work here, create and edit a new Java class <code class="highlighter-rouge">ThinkingAboutLists</code> in the <code class="highlighter-rouge">exercises8</code> package of your <code class="highlighter-rouge">exercises</code> folder. You can enter the text in comments there.</p>
+
+<ol>
+  <li>
+    <p>What are some examples of lists?  In the introductory video, I spoke about a list of books that I read this summer and a list of temperature readings.  Those might be declared ast <code class="highlighter-rouge">List&lt;String&gt;</code> and <code class="highlighter-rouge">List&lt;Double&gt;</code>, respectively.  The <code class="highlighter-rouge">String</code> could repesent the title of each book I read, and the <code class="highlighter-rouge">Double</code> could represent each temperature reading.</p>
+
+    <p>Think of possible applications of the other two types of lists covered in the video:</p>
+
+    <ul>
+      <li><code class="highlighter-rouge">List&lt;Color&gt;</code></li>
+      <li><code class="highlighter-rouge">List&lt;Account&gt;</code></li>
+    </ul>
+
+    <p>For each of the above, try to find an example where at least one of the following is true:</p>
+
+    <ul>
+      <li>The order of elements in the list is important.</li>
+      <li>There can be duplicates in the list.</li>
+    </ul>
+  </li>
+  <li>
+    <p>Suppose we spin a <a href="https://en.wikipedia.org/wiki/Roulette">Roulette</a> wheel some number of times, and we must report the numbers that show on the wheel when it stops.  Note that:</p>
+
+    <ul>
+      <li>The same number may appear multiple times.</li>
+      <li>The order of the numbers' appearance is important.</li>
+    </ul>
+
+    <p>Thus, we need a <code class="highlighter-rouge">List&lt;?&gt;</code>, but what type of element should be in this list?</p>
+  </li>
+  <li>
+    <p>Can you think of a problem where having <code class="highlighter-rouge">List&lt;Boolean&gt;</code> would be useful?</p>
+  </li>
+  <li>
+    <p>Suppose we have some kind of a <code class="highlighter-rouge">List</code>.  What kinds of operations might we want to perform on that <code class="highlighter-rouge">List</code>?</p>
+  </li>
+</ol>
+
+<p>##Part 3: Solution</p>
+
+<p><a href="https://wustl.box.com/s/hx4bbwl9i2tta4lu2ndlcfh0rcb6ill1">Examples of a list: Solution</a></p>
+
+<p>#What can we do with a list?</p>
+
+<p><a href="https://wustl.box.com/s/turb2its0g7jue0yr6j887ycbuud4ck4">What can we do with a list?</a></p>
+
+<p>#Exercise: Using List</p>
+
+<p>##Part 1: Introduction</p>
+
+<p><a href="https://wustl.box.com/s/huzsr36i1a1065onpmu4x0pyw772te0k">Using List: Introduction</a></p>
+
+<p>##Part 2: The Exercise</p>
+
+<p>Let's try using the code from the end of the video. If you get stuck, look at the solution video, but only as far as it takes you to get unstuck, then try going forward on your own again.</p>
+
+<p>To get started, open the <code class="highlighter-rouge">UsingLists</code> class in the <code class="highlighter-rouge">exercises8</code> package of the <code class="highlighter-rouge">exercises</code> folder.</p>
+
+<p>Some important points:</p>
+
+<ul>
+  <li>We declare the list using the abstract type <code class="highlighter-rouge">List</code>.</li>
+  <li>We instantiate it using a concrete type, such as <code class="highlighter-rouge">LinkedList</code> or <code class="highlighter-rouge">ArrayList</code>.</li>
+</ul>
+
+<p>For now, use <code class="highlighter-rouge">LinkedList</code>.</p>
+
+<ul>
+  <li>Eclipse will say it doesnt know what those types are.  You have to mouse-over the offensive code and allow eclipse to suggest what you should do.</li>
+</ul>
+
+<p>The classes you want are found in <code class="highlighter-rouge">java.util</code> so be sure to choose those.</p>
+
+<ul>
+  <li>
+    <p>The <code class="highlighter-rouge">List</code> needs a type parameter, which in this case should be <code class="highlighter-rouge">String</code>.</p>
+  </li>
+  <li>
+    <p>Using your list, add the following:</p>
+
+    <ul>
+      <li><code class="highlighter-rouge">"open mouth"</code></li>
+      <li><code class="highlighter-rouge">"insert food"</code></li>
+      <li><code class="highlighter-rouge">"chew"</code></li>
+      <li><code class="highlighter-rouge">"chew"</code></li>
+      <li><code class="highlighter-rouge">"swallow"</code></li>
+    </ul>
+  </li>
+  <li>
+    <p>Print the list and verify that it's right</p>
+  </li>
+  <li>
+    <p>Add some more things to the list and print it again</p>
+  </li>
+  <li>
+    <p>Delete one thing and print it again</p>
+  </li>
+</ul>
+
+<p>Once you are done, change the implementation from <code class="highlighter-rouge">LinkedList</code> to <code class="highlighter-rouge">ArrayList</code>, and verify that you see no difference in the program's behavior (this part is not on the video).</p>
+
+<p>##Part 3: Solution</p>
+
+<p><a href="https://wustl.box.com/s/66m09j8nsuwhle517ijdg2r786xwh3rs">Using List: Solution</a></p>
+
+<p>#Exercise: Investigate the Set ADT</p>
+
+<p>##Part 1: Introduction</p>
+
+<p><a href="https://wustl.box.com/s/7mwf21s2mkwu3ig704qxjfoi5v9n96e5">Investigate the Set ADT: Introduction</a></p>
+
+<p>##Part 2: The Exercise</p>
+
+<p>Often in designing or writing software, it helps to use code that others have written.  We have done exactly that with the <code class="highlighter-rouge">List</code> interface and its <code class="highlighter-rouge">LinkedList</code> implementation.</p>
+
+<p>In this exercise you will investigate the <code class="highlighter-rouge">Set</code> interface  using <a href="https://en.wikipedia.org/wiki/Javadoc">Javadoc</a> documentation. You will then write code to use the <code class="highlighter-rouge">Set</code> interface via its <code class="highlighter-rouge">HashSet</code> implementation, and observe what happens with
+the <code class="highlighter-rouge">eating</code> example from the previous exercise.</p>
+
+<p>You will no doubt find some of the documentation confusing, as it refers to concepts we have not studied.  Nonetheless, browsing such documentation is commonplace at all levels when searching for code that may be of use as you develop software.</p>
+
+<p>Try to skim over the confusing parts to pick up the essential parts of the documentation:</p>
+
+<ul>
+  <li>What methods does this interface or class offer?</li>
+  <li>What parameters do those methods need?</li>
+  <li>What kind of return result can be expected?</li>
+</ul>
+
+<p>The methods are listed alphabetically, which does not necessarily  cover the most important methods first.  Skim to get what you need.</p>
+
+<ol>
+  <li>
+    <p>Browse <a href="http://docs.oracle.com/javase/7/docs/api/java/util/Set.html" target="doc">this documentation</a> for the <code class="highlighter-rouge">Set</code> interface.</p>
+
+    <ul>
+      <li>Find methods that resemble those you used for <code class="highlighter-rouge">List</code>.</li>
+    </ul>
+
+    <p>Can you find the Javadoc documentation for the <code class="highlighter-rouge">List</code> interface
+ on your own, using <a href="http://www.google.com" target="doc2">Google</a>? Such documentation is usually found by searching for the fully qualified class, as: <code class="highlighter-rouge">java util list</code>.</p>
+  </li>
+  <li>
+    <p>Remind yourself of the differences between a <code class="highlighter-rouge">Set</code> and a <code class="highlighter-rouge">List</code>:</p>
+
+    <ul>
+      <li>
+        <p>Order is important in a <code class="highlighter-rouge">List</code>.  The elements of a <code class="highlighter-rouge">Set</code> occur in no particular order.</p>
+      </li>
+      <li>
+        <p>A <code class="highlighter-rouge">List</code> can have duplicates.  Attempts to add an already present element to a <code class="highlighter-rouge">Set</code> do not succeed.</p>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <p>In the
+<a href="http://docs.oracle.com/javase/7/docs/api/java/util/Set.html" target="doc">documentation</a>, find the list of <strong>All Known Implementing Classes</strong>.  All of these implement the <code class="highlighter-rouge">Set</code> interface, but:</p>
+
+    <ul>
+      <li>The method of implementation will vary</li>
+      <li>The performance of the implementation will vary</li>
+      <li>Some implementations may <em>exceed</em> the <code class="highlighter-rouge">Set</code> interface by offering additional functionality.</li>
+    </ul>
+  </li>
+  <li>
+    <p>Browse the <a href="http://docs.oracle.com/javase/7/docs/api/java/util/HashSet.html" target="doc">documentation</a> for <code class="highlighter-rouge">HashSet</code>, an implementation of the <code class="highlighter-rouge">Set</code> interface.</p>
+  </li>
+  <li>
+    <p>Open the <code class="highlighter-rouge">UsingSet</code> class of the <code class="highlighter-rouge">exercises8</code> package
+in the <code class="highlighter-rouge">exercises</code> folder.</p>
+
+    <ul>
+      <li>
+        <p>Copy and paste the code from <code class="highlighter-rouge">UsingList</code>, but change
+ the type of the collection</p>
+
+        <ul>
+          <li>from <code class="highlighter-rouge">List</code> to <code class="highlighter-rouge">Set</code></li>
+          <li>from <code class="highlighter-rouge">LinkedList</code> to <code class="highlighter-rouge">HashSet</code></li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ol>
+
+<p>##Part 3: Solution</p>
+
+<p><a href="https://wustl.box.com/s/xwzrajfary3h6ymrpc8bz0jb7j80gmx3">Investigate the Set ADT: Solution</a></p>
+
+<p>#Roundtable: List or Set?</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Video</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><a href="https://wustl.box.com/s/gsf61xjie6m1gfif7agkqmp51pn3alo5">Part 1</a></td>
+    </tr>
+    <tr>
+      <td><a href="https://wustl.box.com/s/mb4adr11mjq4oubminp1oww41q2co7nh">Part 2</a></td>
+    </tr>
+    <tr>
+      <td><a href="https://wustl.box.com/s/c05wgopguv9uha9o8ovbapykm2jsca7z">Part 3</a></td>
+    </tr>
+  </tbody>
+</table>
+
+<p>#Object Equality</p>
+
+<p><a href="https://wustl.box.com/s/7b5xwl3mmqdayq1zl47yvnen8j1nsslm">Object Equality</a></p>
+
+<p>#Object hashCode()</p>
+
+<p><a href="https://wustl.box.com/s/xlh7xzozxcra0qxy7bhsdsuqrej426kn">Object hashCode()</a></p>
+
+<p>#Roundtable: Common mistake with .equals:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Video</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><a href="https://wustl.box.com/s/wv39k2qhxfzwf2v3kasdv76e7pv6d2b1">Part 1</a></td>
+    </tr>
+    <tr>
+      <td><a href="https://wustl.box.com/s/ve7w9h4vrn0p6jmhru4ltlp0ofwy5f02">Part 2</a></td>
+    </tr>
+  </tbody>
+</table>
+
+<p>#Exercise: List and Set of Point</p>
+
+<p>##Part 1: Introduction</p>
+
+<p><a href="https://wustl.box.com/s/u59xtyv7bn49ttkhwpfu2an0e8hx7sfn">List and Set of Point: Introduction</a></p>
+
+<p>##Part 2: The Exercise</p>
+
+<p>In this exercise, you use eclipse to <em>auto-generate</em> useful parts of a class.  Try this on your own, but as you need help, run the solution video only as far as necessary for you to move forward again on your own.</p>
+
+<ol>
+  <li>
+    <p>Find and open the <code class="highlighter-rouge">Point</code> class in the <code class="highlighter-rouge">exercises8</code> package of the <code class="highlighter-rouge">exercises</code> folder.</p>
+  </li>
+  <li>
+    <p>Based on the comment you see there concerning <em>has-a</em>, declare the instance variables for this class, calling them <code class="highlighter-rouge">x</code> and <code class="highlighter-rouge">y</code>.</p>
+  </li>
+  <li>
+    <p>Auto-generate the constructor by choosing <code class="highlighter-rouge">Source</code> and then <code class="highlighter-rouge">Generate Constructor using Fields</code></p>
+  </li>
+  <li>
+    <p>Choose the fields <code class="highlighter-rouge">x</code> and <code class="highlighter-rouge">y</code>, and finish to generate the constructor.</p>
+  </li>
+  <li>
+    <p>These fields will be <em>immutable</em>, so edit the declarations for <code class="highlighter-rouge">x</code> and <code class="highlighter-rouge">y</code> and add the <code class="highlighter-rouge">final</code> attribute.  This ensures that the values of <code class="highlighter-rouge">x</code> and <code class="highlighter-rouge">y</code> can be set only by the constructor.</p>
+  </li>
+  <li>
+    <p>Now use eclipse to generate the <em>getters</em> for <code class="highlighter-rouge">x</code> and <code class="highlighter-rouge">y</code>.</p>
+
+    <p>Usually the menu you are presented would also offer to generate <em>setters</em> but eclipse knows the relevant variables are <code class="highlighter-rouge">final</code> and cannot be set after construction.</p>
+  </li>
+  <li>
+    <p>In the <code class="highlighter-rouge">main()</code> method, construct and print a <code class="highlighter-rouge">Point</code> or two and verify that things look good.</p>
+
+    <p>They should not look so good.  When you print a <code class="highlighter-rouge">Point</code>, you getan ugly and uninformative <code class="highlighter-rouge">String</code>.   To get something better, we must override the <code class="highlighter-rouge">toString()</code> method.</p>
+  </li>
+  <li>
+    <p>Use eclipse similarly to generate a simple <code class="highlighter-rouge">toString()</code> method.</p>
+
+    <p>This, and the subsequent work below, is accomplished also via the <code class="highlighter-rouge">Source</code> menu.</p>
+  </li>
+  <li>
+    <p>OK we are ready to make a <code class="highlighter-rouge">Set</code> of some points.  Put the following code in the <code class="highlighter-rouge">main</code> method:</p>
+
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code> Set&lt;Point&gt; set = new HashSet&lt;Point&gt;();
+ set.add(new Point(131, 132));
+ set.add(new Point(131,132));
+ System.out.println("Set has " + set);
+</code></pre></div>    </div>
+
+    <ol>
+      <li>Recalling that sets should have no duplicates, you the output from the above code should show the set having the same point twice.</li>
+      <li>This is because Java is using its built-in notion of <em>equality</em>: are two objects exactly the same object (as in, the same reference in memory)?</li>
+      <li>We need to change this behavior, so read on.</li>
+    </ol>
+  </li>
+  <li>
+    <p>Now let's use eclipse to generate <code class="highlighter-rouge">hashCode()</code> and <code class="highlighter-rouge">equals(Object other)</code> methods.</p>
+
+    <p>You must pick the attributes (instance variable names) upon which you wish equality to be based.</p>
+  </li>
+  <li>
+    <p>Rerun your code and make sure that two <code class="highlighter-rouge">Point</code> objects with the same coordinates cannot both be contained in the same set.</p>
+  </li>
+</ol>
+
+<p>###Further exploration</p>
+
+<ol>
+  <li>
+    <p>What happens if <code class="highlighter-rouge">hashCode()</code> returns a random integer?  Try:</p>
+
+    <pre>
+ public int hashCode() {
+    return (int)(Math.random()*100000);
+ }
+ </pre>
+
+    <ul>
+      <li>What behavior do you see in the set?</li>
+      <li>Why do you see that behavior?</li>
+    </ul>
+
+    <p>The above code makes <code class="highlighter-rouge">hashCode()</code> * inconsistent*, breaking a portion of the contract concerning object equality.</p>
+  </li>
+  <li>
+    <p>What happens if <code class="highlighter-rouge">hashCode()</code> always returns the same result?</p>
+
+    <pre>
+ public int hashCode() {
+    return 0;
+ }
+ </pre>
+
+    <ul>
+      <li>Does this work?</li>
+      <li>What impact does the above <code class="highlighter-rouge">hashCode()</code> have on performance?</li>
+    </ul>
+  </li>
+</ol>
+
+<p>###Now try lists</p>
+
+<p>Go back and change the <code class="highlighter-rouge">Set</code> and <code class="highlighter-rouge">HashSet</code> of your code to use <code class="highlighter-rouge">List</code> and <code class="highlighter-rouge">LinkedList</code>, respectively.</p>
+
+<ol>
+  <li>
+    <p>You should see duplicates.  But that's OK for lists.</p>
+  </li>
+  <li>
+    <p>Intentionally break <code class="highlighter-rouge">.equals(Object other)</code> by returning <code class="highlighter-rouge">false</code> always.</p>
+
+    <p>What aspect of the contract does this break for  `.equals(Object other)?</p>
+  </li>
+  <li>
+    <p>What behavior do you see?</p>
+
+    <p>Adding to a list does not consult <code class="highlighter-rouge">.equals(Other object)</code>, so you should see no difference.</p>
+  </li>
+  <li>
+    <p>Now ask whether the list <code class="highlighter-rouge">.contains(new Point(131,132))</code>.</p>
+
+    <p>Nothing should be found in the list with the broken <code class="highlighter-rouge">.equals(Object other)</code>.</p>
+  </li>
+  <li>
+    <p>Revert the code back to its proper <code class="highlighter-rouge">hashCode</code> and  <code class="highlighter-rouge">.equals(Object other)</code>.</p>
+  </li>
+</ol>
+
+<p>##Part 3: Solution</p>
+
+<p><a href="https://wustl.box.com/s/e68hii9lwgyhj3jftihr0hxz3lwph7j1">List and Set of Point: Solution</a></p>
+
+<p>#Exercise: Design StockHolding from a user story</p>
+
+<p>##Part 1: Introduction</p>
+
+<p><a href="https://wustl.box.com/s/m0sdlmwahm0bmgd9ywhu1ha18mufl5xh">Design StockHolding from a user story: Introduction</a></p>
+
+<p>##Part 2: The Exercise</p>
+
+<p>OK now you are pretty much on your own:</p>
+
+<ul>
+  <li>
+    <p>I will tell you a story.</p>
+  </li>
+  <li>
+    <p>You will design an object.</p>
+  </li>
+  <li>
+    <p>Create this object from scratch in the <code class="highlighter-rouge">exercises8</code> package of the <code class="highlighter-rouge">exercises</code> folder.</p>
+  </li>
+</ul>
+
+<p>As usual, if stuck, consult portions of the solutions video.</p>
+
+<p>###The story</p>
+
+<p>A <code class="highlighter-rouge">StockHolding</code> object:</p>
+
+<p><code class="highlighter-rouge">has-a</code></p>
+
+<ul>
+  <li>immutable <code class="highlighter-rouge">String</code> identifying its name (e.g., <code class="highlighter-rouge">IBM</code>)</li>
+  <li>immutable <code class="highlighter-rouge">String</code> identifying its owner (e.g., <code class="highlighter-rouge">Ari</code>)</li>
+  <li>number of share (<code class="highlighter-rouge">int</code>) that can change over time</li>
+  <li>price per share (<code class="highlighter-rouge">int</code>) that can change over time</li>
+</ul>
+
+<p><code class="highlighter-rouge">and it needs:</code></p>
+
+<ul>
+  <li>A constructor</li>
+  <li>A <code class="highlighter-rouge">toString()</code></li>
+  <li><code class="highlighter-rouge">hashCode()</code> and <code class="highlighter-rouge">equals(Object other)</code></li>
+</ul>
+
+<p>You should generate the above automatically, not by hand!</p>
+
+<p>##Part 3: Solution</p>
+
+<p><a href="https://wustl.box.com/s/jsgptbmxgx2rj7v3k0xc6ex1kfbpt8hq">Design StockHolding from a user story: Solution</a></p>
+
+<p>#Interfaces for behavior abstraction</p>
+
+<p><a href="https://wustl.box.com/s/l7iuvb9en4m3wlch7k0f4gsh5xr734zo">Interfaces for behavior abstraction</a></p>
+
+<p>#Exercise: Application of the interface</p>
+
+<p>##Part 1: Introduction</p>
+
+<p><a href="https://wustl.box.com/s/lp5hq1yrc3ule27g9gqr43i2fyfsu5ik">Application of the interface: Introduction</a></p>
+
+<p>##Part 2: The Exercise</p>
+
+<p>Do your work in the <code class="highlighter-rouge">exercises8</code> package of the <code class="highlighter-rouge">exercises</code> folder.</p>
+
+<p>###The story
+Define a <code class="highlighter-rouge">PersonalProperty</code> object:</p>
+
+<p><code class="highlighter-rouge">has-a</code></p>
+
+<ul>
+  <li>immutable <code class="highlighter-rouge">int</code> for its initial value</li>
+  <li>immutable <code class="highlighter-rouge">int</code> representing the years since its initial value was established</li>
+</ul>
+
+<p><code class="highlighter-rouge">and it needs:</code></p>
+
+<ul>
+  <li>A constructor that takes in values for the two instance variables</li>
+  <li>
+    <p>A method <code class="highlighter-rouge">int depreciatedValue()</code> that returns the value of the property according to the formula:</p>
+
+    <p><code class="highlighter-rouge">initialValue</code> * 0.80<sup><code class="highlighter-rouge">yearsOld</code></sup></p>
+  </li>
+  <li>A <code class="highlighter-rouge">toString()</code></li>
+</ul>
+
+<p>###Your task</p>
+
+<p>After defining the above class, adapt it to implement the <code class="highlighter-rouge">Valuable</code> interface:</p>
+
+<pre>
+public interface Valuable {
+   public int getLiquidValue();
+}
+</pre>
+
+<p>##Part 3: Solution</p>
+
+<p><a href="https://wustl.box.com/s/q1b1afq6ufgshalk8c4nkl77iks3edu6">Application of the interface: Solution</a></p>
+
+<p>#Further use of the Valuable interface</p>
+
+<p><a href="https://wustl.box.com/s/s9chdzv2imwg95be8q4lq7f7b308acek">Further use of the Valuable interface</a></p>
+
+<p>#Conclusion</p>
+
+<p><a href="https://wustl.box.com/s/jwxw6cko6sf9497azx0ijumqedbb9uea">Conclusion</a></p>
+
+				</article>
+			</div>
+
+	</div>
+	<script type="text/javascript" src="/cse131/_site/js/highlight.pack.js"></script>
+</body>
+</html>
