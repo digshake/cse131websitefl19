@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Module 6 | CSE131: Computer Science I</title>
+  <meta name="description" content="#Module OverviewModule Overview#Module IntroductionModule Introduction#Explicit RecursionExplicit Recursion#Exercise: Recursive Factorial and Sum##Part 1: In...">
+
+  <link rel="stylesheet" href="/cse131/_site/css/main.css">
+  <link rel="canonical" href="https://www.cse.wustl.edu/cse131/_site/weeks/6/prep/">
+  <link rel="alternate" type="application/rss+xml" title="CSE131: Computer Science I" href="https://www.cse.wustl.edu/cse131/_site/feed.xml">
+</head>
+
+
+<body>
+	<div class="wrapper">
+			<div class="container">
+
+				<article class="site-content">
+					<h1>Prep 6: Module 6</h1>
+
+
+
+					
+<p>#Module Overview</p>
+
+<p><a href="https://wustl.box.com/s/te9wm4vjt9a58uegf7qs2417rkjjk99q">Module Overview</a></p>
+
+<p>#Module Introduction</p>
+
+<p><a href="https://wustl.box.com/s/v9osue0uqk5hwcktcvq2ybjz84vtqu5s">Module Introduction</a></p>
+
+<p>#Explicit Recursion</p>
+
+<p><a href="https://wustl.box.com/s/szzizno3l9pkizf45tgk8s0k9lfa8nie">Explicit Recursion</a></p>
+
+<p>#Exercise: Recursive Factorial and Sum</p>
+
+<p>##Part 1: Introduction</p>
+
+<p><a href="https://wustl.box.com/s/sy7vqk37hf2l9iygdc2t6q7ljhy0uo7s">Recursive Factorial and Sum: Introduction</a></p>
+
+<p>##Part 2: Demonstration of the debugger using factorial</p>
+
+<p><a href="https://wustl.box.com/s/ureno6coqm13dscechi84o903xxcr040">Demonstration of the debugger using factorial</a></p>
+
+<p>##Part 3: The Exercise</p>
+
+<ul>
+  <li>
+    <p>In the <code class="highlighter-rouge">exercises6</code> package of the <code class="highlighter-rouge">exercises</code> source folder, create</p>
+
+    <ul>
+      <li>
+        <p><code class="highlighter-rouge">Sum.java</code> as a Java class</p>
+      </li>
+      <li>
+        <p><code class="highlighter-rouge">SumTest.java</code> as a JUnit test file</p>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <p>Complete both so that sum is computed as defined by the explicitly recursive formula:</p>
+
+    <ul>
+      <li>
+        <p>sum(n) = sum(n-1) + n, if n &gt; 0</p>
+      </li>
+      <li>
+        <p>sum(n) = 0, otherwise</p>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <p>Write some tests for sum and run the unit test file to make sure
+your function works.</p>
+  </li>
+</ul>
+
+<p>Remember that you have to have a <code class="highlighter-rouge">@Test</code> directive above any
+unit test method, as shown in the video.</p>
+
+<p>##Part 4: Solution</p>
+
+<p><a href="https://wustl.box.com/s/4lfxdv6ymojcgkzelp6nzq0u09dgjvdc">Recursive Factorial and Sum: Solution</a></p>
+
+<p>#Exercise: Recursive Addition</p>
+
+<p>##Part 1: The Exercise</p>
+
+<ul>
+  <li>
+    <p>In the <code class="highlighter-rouge">exercises6</code> package of the <code class="highlighter-rouge">exercises</code> source folder, complete the</p>
+
+    <ul>
+      <li>
+        <p><code class="highlighter-rouge">Add.java</code></p>
+      </li>
+      <li>
+        <p><code class="highlighter-rouge">addTest.java</code></p>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <p>Complete both so that addition is computed as defined by the explicitly recursive formula:</p>
+
+    <ul>
+      <li>add(x,y) = x, if y = 0</li>
+      <li>add(x,y) = add(x+1,y-1), otherwise</li>
+    </ul>
+  </li>
+  <li>
+    <p>Write some more tests for add and run the unit test file to make sure your function works.</p>
+  </li>
+</ul>
+
+<p>Remember that you have to have a <code class="highlighter-rouge">@Test</code> directive above any
+unit test method, as shown in the video.</p>
+
+<ul>
+  <li>
+    <p>Under what conditions on x and y does your method operate correctly?</p>
+  </li>
+  <li>
+    <p>How could you complete the <code class="highlighter-rouge">addAll(x,y)</code> method so it works for any <code class="highlighter-rouge">x</code> and <code class="highlighter-rouge">y</code>?</p>
+  </li>
+</ul>
+
+<p>See the code, as a hint is given there.</p>
+
+<p>##Part 2: The Solution</p>
+
+<p><a href="https://wustl.box.com/s/s54jrrm0doxsjtx6i4v62yqj8sut7q1s">Recursive Addition: Solution</a></p>
+
+<p>#Finding Recursive Substructure</p>
+
+<p><a href="https://wustl.box.com/s/kparr2laboli7mf8kmtccfsi766007eg">Finding Recursive Substructure</a></p>
+
+<p>#Exercise: Recursion and Base Cases</p>
+
+<p>##Part 1: Introduction</p>
+
+<p><a href="https://wustl.box.com/s/d2dl0t9swt52yutyqdejo2aygt8ihiaf">Recursion and Base Cases: Introduction</a></p>
+
+<p>##Part 2: The exercise</p>
+
+<p>###Part 1</p>
+
+<p>In the video, one possible explanation for human reproduction was given,
+namely that a woman is born with all of the babies already inside her that
+she would ever deliver.  This idea is attributed to
+<a href="http://10e.devbio.com/article.php?id=65"> Anton von Leeuwenhoek</a> 
+who, as a lensmaker, greatly advanced the use of microscopes in studying biology.
+In terms of recursion and base cases, what is wrong with
+von Leeuwenhoek’s speculation?</p>
+
+<p>###Part 2</p>
+
+<ul>
+  <li>
+    <p>In the <code class="highlighter-rouge">exercises6</code> package of the <code class="highlighter-rouge">exercises</code> source folder, find and open the <code class="highlighter-rouge">FactorialNoBaseCase</code> class.</p>
+  </li>
+  <li>
+    <p>Run the class as a Java Application.</p>
+  </li>
+  <li>
+    <p>What happens, and why?</p>
+  </li>
+</ul>
+
+<p>##Part 3: Solution</p>
+
+<p><a href="https://wustl.box.com/s/lg3zxbt9jn79h4v2nf6hyjsjmsmjh5o7">Recurstion and Base Cases: Solution</a></p>
+
+<p>#Roundtable: Method Execution using the Debugger</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Video</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><a href="https://wustl.box.com/s/3py0twgxsq0cftec6ctfcvqwojg6esch">Part 1</a></td>
+    </tr>
+    <tr>
+      <td><a href="https://wustl.box.com/s/8760zw7dpsa9sf94caex3cxs83hwlqmq">Part 2</a></td>
+    </tr>
+    <tr>
+      <td><a href="https://wustl.box.com/s/mfjyr2s0ewdm4nyxxtv146toxdba53ay">Part 3</a></td>
+    </tr>
+    <tr>
+      <td><a href="https://wustl.box.com/s/xajkmxgo2yc4bjoo10sruy09z5ttoe40">Part 4</a></td>
+    </tr>
+    <tr>
+      <td><a href="https://wustl.box.com/s/bewxv5q2frr1nvx78elbjnmj8i9pcyg5">Part 5</a></td>
+    </tr>
+    <tr>
+      <td><a href="https://wustl.box.com/s/x2h42e348azc3ixo69jdkvy9zve4294l">Part 6</a></td>
+    </tr>
+    <tr>
+      <td><a href="https://wustl.box.com/s/lxjyd1agj6nn835kadtow8sbvbankw98">Part 7</a></td>
+    </tr>
+  </tbody>
+</table>
+
+<p>#Example: Generating graph paper</p>
+
+<p><a href="https://wustl.box.com/s/z3yald43giscvhu8x1jkeqyu4wfmzx1z">Generating graph paper</a></p>
+
+<p>#Exercise: Generating graph paper</p>
+
+<p>##Part 1: Introduction</p>
+
+<p><a href="https://wustl.box.com/s/4vd2t8a3covyplyisehv108gg5ali1ls">Generating graph paper: Introduction</a></p>
+
+<p>##Part 2: The exercise</p>
+
+<ul>
+  <li>
+    <p>In the <code class="highlighter-rouge">exercises6</code> package of the <code class="highlighter-rouge">exercises</code> source folder, find and open the <code class="highlighter-rouge">GraphPaper</code> class.</p>
+  </li>
+  <li>
+    <p>Complete the class so that it produces a grid on the screen</p>
+  </li>
+  <li>
+    <p>Think about the recursive substructure of drawing a grid</p>
+  </li>
+  <li>
+    <p>Think about the base case(s)</p>
+  </li>
+</ul>
+
+<p>##Part 3: Solution</p>
+
+<p><a href="https://wustl.box.com/s/akksa4nosjfiinpq2xskfm26hxbsmy2z">Generating graph paper: Solution</a></p>
+
+<p>#Substitution Model</p>
+
+<p><a href="https://wustl.box.com/s/tpll1ezyue1f4rsjzo7ioymxa8tfj8om">Substitution Model</a></p>
+
+<p>#Roundtable: Substitution practice: factorial</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Video</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><a href="https://wustl.box.com/s/pvf4x0h94edrjeqaoy14yky8e5blc8hu">Part 1</a></td>
+    </tr>
+    <tr>
+      <td><a href="https://wustl.box.com/s/lwv6mfxy2l402rnkcjvs7l40rtk6mebx">Part 2</a></td>
+    </tr>
+    <tr>
+      <td><a href="https://wustl.box.com/s/wfc4gtft5n2p3039mczvuirx6l6fgv6b">Part 3</a></td>
+    </tr>
+    <tr>
+      <td><a href="https://wustl.box.com/s/e721jl5ndq1ww2idpsobq9yp3nhp9zkg">Part 4</a></td>
+    </tr>
+  </tbody>
+</table>
+
+<p>#Roundtable: Tracing Recursion</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Video</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><a href="https://wustl.box.com/s/pxp2i5qw8it9xszoun3e1uxo9lg9kuzf">Part 1</a></td>
+    </tr>
+    <tr>
+      <td><a href="https://wustl.box.com/s/ssh32dmg6wpcpqamc1oq61ytrbkcizjq">Part 2</a></td>
+    </tr>
+    <tr>
+      <td><a href="https://wustl.box.com/s/dkxs96deuwrpy7alzhmxnxg0fvj7dcwe">Part 3</a></td>
+    </tr>
+  </tbody>
+</table>
+
+<p>#Roundtable: More tracing recursion</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Video</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><a href="https://wustl.box.com/s/ynsu4f5f9uaguu4gco2n2n63yhelo4xn">Part 1</a></td>
+    </tr>
+    <tr>
+      <td><a href="https://wustl.box.com/s/ndx5nabrtbbkpyefo5y566e2pmrjqqv9">Part 2</a></td>
+    </tr>
+    <tr>
+      <td><a href="https://wustl.box.com/s/ies9rks11pq6lafbvk46t6058e2v5jp8">Part 3</a></td>
+    </tr>
+  </tbody>
+</table>
+
+<p>#Conclusion</p>
+
+<p><a href="https://wustl.box.com/s/h0k0f6r2o5v7sbzxchrydcm34rmk527w">Conclusion</a></p>
+
+				</article>
+			</div>
+
+	</div>
+	<script type="text/javascript" src="/cse131/_site/js/highlight.pack.js"></script>
+</body>
+</html>
