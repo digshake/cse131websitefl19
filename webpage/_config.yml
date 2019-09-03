@@ -31,6 +31,8 @@ collections:
     output: true
   extensions:
     output: true
+  guides:
+    output: true
 
 defaults:
 - scope:
