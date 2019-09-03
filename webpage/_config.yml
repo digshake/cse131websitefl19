@@ -91,3 +91,8 @@ defaults:
     layout: ext
     type: extension
     permalink: weeks/:week/ext/
+- scope:
+    path: ""
+    type: guides
+  values:
+    layout: writeup
