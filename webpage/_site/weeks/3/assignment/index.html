@@ -57,16 +57,20 @@ Ask questions as needed to complete one step before going on to the next.</p>
         </ul>
         <p style="text-align: center"><img src="../../../assignments/DieGrid.png" alt="Figure 1" /></p>
         <p>At this point,</p>
-        <ul>
-          <li>Create a class <code class="highlighter-rouge">Dice</code> in the <code class="highlighter-rouge">lab3</code> package.</li>
-          <li>Decide on meaningful variable names for the concepts introduced so far:
-    * The number of dice used in this simulation.
-    * The number of times the dice are thrown.</li>
-          <li>Insert code to obtain the values for these variables from the user.  If you have forgotten how to do this, look at examples from previous studios or look at the code from lecture.</li>
-          <li>Test your code at this point, printing out the values you have received.</li>
-        </ul>
       </li>
     </ol>
+
+    <ul>
+      <li>Create a class <code class="highlighter-rouge">Dice</code> in the <code class="highlighter-rouge">lab3</code> package.</li>
+      <li>Decide on meaningful variable names for the concepts introduced so far:
+        <ol>
+          <li>The number of dice used in this simulation.</li>
+          <li>The number of times the dice are thrown.</li>
+        </ol>
+      </li>
+      <li>Insert code to obtain the values for these variables from the user.  If you have forgotten how to do this, look at examples from previous studios or look at the code from lecture.</li>
+      <li>Test your code at this point, printing out the values you have received.</li>
+    </ul>
   </li>
   <li>
     <p><strong>Now let's simulate the dice rolls</strong>.  For the purposes of this lab, let's say that each die is six-sided, and therefore labeled to show the values 1…6. If you have time, you might consider how to change your code to accommodate dice that have fewer or more than 6 sides.
@@ -75,9 +79,8 @@ Ask questions as needed to complete one step before going on to the next.</p>
     <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code> // Pseudocode
  // for each die d
  //     randomly throw d to obtain the value v, shown face-up on d
- // end  
+ // end
 </code></pre></div>    </div>
-
     <ol>
       <li><strong>How should you represent the value v shown on the die?</strong>
  While it is true that in computer science most sequences start at 0, you should pick a representation that helps you solve the problem at hand.
@@ -94,15 +97,13 @@ Ask questions as needed to complete one step before going on to the next.</p>
     <p style="text-align: center"><img src="../../../assignments/353.png" alt="Example Throw:" /></p>
 
     <p>You must provision an array with one slot per die to hold the results of each throw. If <code class="highlighter-rouge">D</code> is the number of dice, then such an array might fit into your program as follows:</p>
-
     <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code> int[] diceThrown = new int[D]
  // for each die d
  //     randomly throw d to obtain the value v, shown face-up on d
- //     record die d\'s role in the diceThrown array
+ //     record die d's role in the diceThrown array
  // end
- // At this point, your dieThrown array has an entry that shows each die\'s value
+ // At this point, your dieThrown array has an entry that shows each die's value
 </code></pre></div>    </div>
-
     <p>Think about how to deploy the above array to remember each die's value after it has been thrown. Instantiate the array in your code and make sure its size is exactly right for the task at hand.
  For the example abouve, your array might look like:</p>
 
@@ -173,6 +174,36 @@ Ask questions as needed to complete one step before going on to the next.</p>
     </ul>
   </li>
 </ol>
+
+<h1 id="sample-output">Sample Output</h1>
+
+<p>Below is an example showing 2 dice being thrown 12 times. Please note that your values probably won’t look the same since the dice rolls are random. Also note that your program should work for any combination of dice and throws, not just the number of dice shown below.</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Throw 1: 6 5 = 11
+Throw 2: 5 1 = 6
+Throw 3: 6 4 = 10
+Throw 4: 6 3 = 9
+Throw 5: 2 5 = 7
+Throw 6: 4 4 = 8
+Throw 7: 6 5 = 11
+Throw 8: 5 2 = 7
+Throw 9: 1 2 = 3
+Throw 10: 2 4 = 6
+Throw 11: 2 6 = 8
+Throw 12: 4 3 = 7
+Of the 12 throws, 1 showed the same value on all of the dice which is 8.3% of all throws.
+The sum 2 appeared 0 times, which is 0.0% of all throws.
+The sum 3 appeared 1 times, which is 8.3% of all throws.
+The sum 4 appeared 0 times, which is 0.0% of all throws.
+The sum 5 appeared 0 times, which is 0.0% of all throws.
+The sum 6 appeared 2 times, which is 16.7% of all throws.
+The sum 7 appeared 3 times, which is 25.0% of all throws.
+The sum 8 appeared 2 times, which is 16.7% of all throws.
+The sum 9 appeared 1 times, which is 8.3% of all throws.
+The sum 10 appeared 1 times, which is 8.3% of all throws.
+The sum 11 appeared 2 times, which is 16.7% of all throws.
+The sum 12 appeared 0 times, which is 0.0% of all throws.
+</code></pre></div></div>
 
 <h1 id="submitting-your-work-read-carefully">Submitting your work (read carefully):</h1>
 
