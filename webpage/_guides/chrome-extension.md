@@ -57,3 +57,10 @@ A. You can go back to the "wrong student" again and update the grade to be a 0. 
 
 A. Contact instructors/TAs with details about the issue. In particular: 1) students involved, 2) What grade should have been recorded, and 3) When you were entering data!
 
+## Q. When is the time stamp / late calculation performed? /  I started a demo a X, will it be considered late?
+
+A. If it's that close to the due time, you should trust it to consistently apply the late policy.
+
+## Q. I left the classroom without hitting "Save".  Will students be penalized?
+
+A. If you hit save within a reasonable amount of time it should apply the late policy consistently.  If it appears to have prevented giving credit or used late coupons, let a Head TA or Instructor know.
