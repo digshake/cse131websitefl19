@@ -45,13 +45,15 @@ Click here: [https://chrome.google.com/webstore/detail/wustl-cse-ta-assistant/hg
 
 A. You can select the student(s) again, return to the rubric, and update the grade.
 
-## Q. The when I return to a student the rubric doesn't show comments I left and/or the rubric doesn't include items I selected.  Why not?
+## Q. When I return to a student the rubric doesn't show comments I left and/or the rubric doesn't include items I selected.  Why not?
 
 A. Try reloading the page.  (Sometimes data is posted correctly, but the returned results aren't used to update the local data store.  This is an area of future work)
 
 ## Q. What if I enter a grade for the wrong student?
 
-A. You can go back to the "wrong student" again and update the grade to be a 0. This will update the lab score, but *not* coupons. Please contact a Head TA or instructor if coupons were used.  (There shouldn't be any problems with either Extensions or Studios)
+A. You can go back to the "wrong student" again and update the grade.  If it was already graded, try to restore it to the prior values.  If you don't remember the original grade or are at all uncertain, contact an instructor of Head TA!).  If it was ungraded, set everything to be a 0. 
+
+*Labs*:  Updating the grade will update the lab score, but *not* coupons. Please contact a Head TA or instructor if coupons were used as a result of your attempt at assigning credit.  (There shouldn't be any problems with either Extensions or Studios)
 
 ## Q. What if I see error messages?
 
