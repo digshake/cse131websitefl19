@@ -1,7 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
 
-{% include head.html %}
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Extensions</title>
+
+  <link rel="stylesheet" href="{{ "/css/main.css" | prepend: site.baseurl }}">
+  <link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}">
+  <link rel="alternate" type="application/rss+xml" title="{{ site.title }}" href="{{ "/feed.xml" | prepend: site.baseurl | prepend: site.url }}">
+</head>
 
 <body>
 	<div class="wrapper writeup">
@@ -10,7 +20,7 @@
 				<article class="site-content">
 					<h1>{{ page.type | capitalize}} for Module {{ page.week }}:</h1>
 
-					{% for ext in site.extensions limit:20 %}
+					{% for ext in site.extensions limit:999 %}
 						{% assign sweek = ext.week | downcase %}
 						{% assign pweek = page.week | downcase %}
 						{% if sweek == pweek %}
